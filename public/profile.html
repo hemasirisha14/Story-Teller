@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Profile | Story Teller</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="../assets/css/style.css">
+
+<link rel="stylesheet"
+      href="../assets/css/profile.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+                NAVBAR
+========================================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+📖 Story Teller
+</div>
+
+
+<ul class="nav-links">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="stories.html">
+Stories
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+</ul>
+
+
+<div class="nav-right">
+
+<button id="theme-toggle"
+        class="theme-btn">
+🌙
+</button>
+
+<a href="login.html"
+   class="login-btn">
+Logout
+</a>
+
+</div>
+
+</nav>
+
+</header>
+
+
+
+<!-- =========================================
+                PROFILE
+========================================= -->
+
+<section class="profile-page">
+
+
+<!-- PROFILE HERO -->
+
+<div class="profile-card">
+
+
+<div class="profile-image">
+👤
+</div>
+
+
+<h1 id="welcomeUser">
+Welcome, Reader 👋
+</h1>
+
+
+<p>
+Your magical reading journey continues...
+</p>
+
+
+<div class="reader-badge">
+✨ Story Teller Reader
+</div>
+
+
+
+<!-- STATISTICS -->
+
+<div class="stats">
+
+
+<div>
+
+<h2 id="storiesCount">
+0
+</h2>
+
+<p>
+📖 Stories Read
+</p>
+
+</div>
+
+
+
+<div>
+
+<h2 id="bookmarkCount">
+0
+</h2>
+
+<p>
+🔖 Bookmarks
+</p>
+
+</div>
+
+
+
+<div>
+
+<h2 id="favoriteCount">
+0
+</h2>
+
+<p>
+❤️ Favourites
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================
+            READING JOURNEY
+========================================= -->
+
+<section class="profile-section">
+
+
+<h2>
+🔥 Reading Journey
+</h2>
+
+
+<div class="journey-box">
+
+
+<div class="journey-top">
+
+<span>
+Stories explored
+</span>
+
+<strong id="journeyCount">
+0 / 10
+</strong>
+
+</div>
+
+
+<div class="journey-progress">
+
+<div id="journeyProgress"
+     class="journey-progress-bar">
+</div>
+
+</div>
+
+
+<p class="journey-message"
+   id="journeyMessage">
+
+Keep discovering new stories ✨
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+            CONTINUE READING
+========================================= -->
+
+<section class="profile-section">
+
+
+<h2>
+📖 Continue Reading
+</h2>
+
+
+<div class="continue-card">
+
+
+<div class="continue-icon">
+📚
+</div>
+
+
+<div class="continue-info">
+
+<h3 id="continueStory">
+Start a New Adventure
+</h3>
+
+<p id="continueDescription">
+Explore Story Teller and discover your next magical story.
+</p>
+
+
+<a href="stories.html"
+   class="continue-btn"
+   id="continueBtn">
+
+Explore Stories
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+            SAVED STORIES
+========================================= -->
+
+<section class="profile-section">
+
+
+<h2>
+🔖 Saved Stories
+</h2>
+
+
+<div class="story-grid">
+
+<div id="bookmarkContainer">
+
+<!-- Bookmark stories will appear here -->
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+            ACHIEVEMENTS
+========================================= -->
+
+<section class="profile-section">
+
+
+<h2>
+🏆 Achievements
+</h2>
+
+
+<div class="achievement-container">
+
+
+<div class="achievement"
+     id="achievement1">
+
+<div class="achievement-icon">
+🥉
+</div>
+
+<h3>
+First Chapter
+</h3>
+
+<p>
+Read your first story
+</p>
+
+</div>
+
+
+
+<div class="achievement locked"
+     id="achievement2">
+
+<div class="achievement-icon">
+🥈
+</div>
+
+<h3>
+Beginner Reader
+</h3>
+
+<p>
+Read 5 stories
+</p>
+
+<div class="achievement-progress">
+<span id="achievementProgress5"></span>
+</div>
+
+</div>
+
+
+
+<div class="achievement locked"
+     id="achievement3">
+
+<div class="achievement-icon">
+🥇
+</div>
+
+<h3>
+Story Explorer
+</h3>
+
+<p>
+Read 20 stories
+</p>
+
+<div class="achievement-progress">
+<span id="achievementProgress20"></span>
+</div>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================
+            PREFERENCES
+========================================= -->
+
+<section class="profile-section">
+
+
+<h2>
+⚙️ Preferences
+</h2>
+
+
+<div class="preference-box">
+
+
+<div class="preference-row">
+
+<div class="preference-label">
+
+<strong>
+📚 Favourite Genre
+</strong>
+
+<span>
+Your preferred story world
+</span>
+
+</div>
+
+<div class="preference-value"
+     id="favoriteGenre">
+
+Fantasy 🧚
+
+</div>
+
+</div>
+
+
+
+<div class="preference-row">
+
+<div class="preference-label">
+
+<strong>
+🔤 Reading Font
+</strong>
+
+<span>
+Your selected reading style
+</span>
+
+</div>
+
+<div class="preference-value"
+     id="readingFontDisplay">
+
+Poppins
+
+</div>
+
+</div>
+
+
+
+<div class="preference-row">
+
+<div class="preference-label">
+
+<strong>
+🌙 Appearance
+</strong>
+
+<span>
+Personalize your reading experience
+</span>
+
+</div>
+
+<div class="preference-value">
+
+Dark Mode Available
+
+</div>
+
+</div>
+
+
+
+<div class="preference-row">
+
+<div class="preference-label">
+
+<strong>
+🔊 Voice Reading
+</strong>
+
+<span>
+Listen to stories aloud
+</span>
+
+</div>
+
+<div class="preference-value">
+
+Enabled
+
+</div>
+
+</div>
+
+
+<a href="settings.html"
+   class="settings-btn">
+
+⚙️ Manage Settings
+
+</a>
+
+</div>
+
+</section>
+
+
+</section>
+
+
+
+<!-- =========================================
+                RECENTLY READ
+========================================= -->
+
+<section class="history-section">
+
+
+<h2>
+🕒 Recently Read
+</h2>
+
+
+<div id="readingHistory">
+
+<!-- Reading history appears here -->
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================
+                FOOTER
+========================================= -->
+
+<footer>
+
+<p>
+© 2026 Story Teller |
+Every Story Begins with a Single Click.
+</p>
+
+</footer>
+
+
+
+<!-- =========================================
+            THEME + PROFILE SCRIPT
+========================================= -->
+
+<script>
+
+
+/* =====================================
+            THEME
+===================================== */
+
+const themeBtn =
+document.getElementById("theme-toggle");
+
+
+if(localStorage.getItem("theme")==="dark"){
+
+document.body.classList.add("dark");
+
+themeBtn.innerHTML="☀️";
+
+}
+
+
+themeBtn.onclick=function(){
+
+document.body.classList.toggle("dark");
+
+
+if(document.body.classList.contains("dark")){
+
+localStorage.setItem("theme","dark");
+
+themeBtn.innerHTML="☀️";
+
+}
+
+else{
+
+localStorage.setItem("theme","light");
+
+themeBtn.innerHTML="🌙";
+
+}
+
+};
+
+
+
+/* =====================================
+        ACCOUNT INFORMATION
+===================================== */
+
+const currentUserEmail =
+localStorage.getItem("userEmail");
+
+const userName =
+localStorage.getItem("userName");
+
+const welcomeUser =
+document.getElementById("welcomeUser");
+
+
+if(userName){
+
+welcomeUser.innerHTML =
+`Welcome back, ${userName} 👋`;
+
+}
+
+else if(currentUserEmail){
+
+welcomeUser.innerHTML =
+`Welcome back, ${currentUserEmail} 👋`;
+
+}
+
+
+
+/* =====================================
+        ACCOUNT-SPECIFIC DATA
+===================================== */
+
+let storiesRead = [];
+let bookmarks = [];
+let favorites = [];
+
+
+if(currentUserEmail){
+
+
+const storiesReadKey =
+"storiesRead_" + currentUserEmail;
+
+
+storiesRead =
+JSON.parse(
+localStorage.getItem(storiesReadKey)
+) || [];
+
+
+
+const bookmarkKey =
+"bookmarks_" + currentUserEmail;
+
+
+bookmarks =
+JSON.parse(
+localStorage.getItem(bookmarkKey)
+) || [];
+
+
+
+const favoriteKey =
+"favorites_" + currentUserEmail;
+
+
+favorites =
+JSON.parse(
+localStorage.getItem(favoriteKey)
+) || [];
+
+}
+
+
+
+/* =====================================
+            STATISTICS
+===================================== */
+
+document.getElementById("storiesCount").innerText =
+storiesRead.length;
+
+
+document.getElementById("bookmarkCount").innerText =
+bookmarks.length;
+
+
+document.getElementById("favoriteCount").innerText =
+favorites.length;
+
+
+
+/* =====================================
+        READING JOURNEY
+===================================== */
+
+const journeyCount =
+document.getElementById("journeyCount");
+
+const journeyProgress =
+document.getElementById("journeyProgress");
+
+const journeyMessage =
+document.getElementById("journeyMessage");
+
+
+const journeyGoal = 10;
+
+
+const journeyPercentage =
+Math.min(
+(storiesRead.length / journeyGoal) * 100,
+100
+);
+
+
+journeyCount.innerText =
+`${storiesRead.length} / ${journeyGoal}`;
+
+
+journeyProgress.style.width =
+journeyPercentage + "%";
+
+
+if(storiesRead.length >= 10){
+
+journeyMessage.innerText =
+"🎉 Amazing! You explored 10 stories!";
+
+}
+
+else if(storiesRead.length >= 5){
+
+journeyMessage.innerText =
+"🔥 You're becoming a true Story Explorer!";
+
+}
+
+else if(storiesRead.length >= 1){
+
+journeyMessage.innerText =
+"✨ Keep exploring new magical worlds!";
+
+}
+
+
+
+/* =====================================
+        CONTINUE READING
+===================================== */
+
+const continueStory =
+document.getElementById("continueStory");
+
+const continueDescription =
+document.getElementById("continueDescription");
+
+const continueBtn =
+document.getElementById("continueBtn");
+
+
+if(storiesRead.length > 0){
+
+const lastStory =
+storiesRead[storiesRead.length - 1];
+
+
+continueStory.innerText =
+lastStory;
+
+
+continueDescription.innerText =
+"Your most recently read story is waiting for you.";
+
+
+continueBtn.innerText =
+"📖 Read Again";
+
+continueBtn.href =
+"stories.html";
+
+}
+
+
+
+/* =====================================
+        FAVOURITE GENRE
+===================================== */
+
+const savedFavouriteGenre =
+localStorage.getItem("favouriteGenre");
+
+
+if(savedFavouriteGenre){
+
+document.getElementById("favoriteGenre")
+.innerText =
+savedFavouriteGenre;
+
+}
+
+
+
+/* =====================================
+        READING FONT
+===================================== */
+
+const savedFont =
+localStorage.getItem("readingFont");
+
+
+const fontNames = {
+
+poppins:"Poppins",
+
+merriweather:"Merriweather",
+
+playfair:"Playfair Display",
+
+nunito:"Nunito",
+
+comic:"Comic Neue",
+
+caveat:"Caveat",
+
+cinzel:"Cinzel",
+
+roboto:"Roboto"
+
+};
+
+
+if(savedFont && fontNames[savedFont]){
+
+document.getElementById("readingFontDisplay")
+.innerText =
+fontNames[savedFont];
+
+}
+
+
+
+/* =====================================
+            ACHIEVEMENTS
+===================================== */
+
+const achievement2 =
+document.getElementById("achievement2");
+
+const achievement3 =
+document.getElementById("achievement3");
+
+
+const progress5 =
+document.getElementById("achievementProgress5");
+
+const progress20 =
+document.getElementById("achievementProgress20");
+
+
+
+/* FIRST STORY */
+
+if(storiesRead.length >= 1){
+
+document.getElementById("achievement1")
+.classList.remove("locked");
+
+}
+
+
+
+/* 5 STORIES */
+
+progress5.style.width =
+Math.min(
+(storiesRead.length / 5) * 100,
+100
+) + "%";
+
+
+if(storiesRead.length >= 5){
+
+achievement2.classList.remove("locked");
+
+}
+
+
+
+/* 20 STORIES */
+
+progress20.style.width =
+Math.min(
+(storiesRead.length / 20) * 100,
+100
+) + "%";
+
+
+if(storiesRead.length >= 20){
+
+achievement3.classList.remove("locked");
+
+}
+
+
+
+/* =====================================
+                LOGOUT
+===================================== */
+
+const logoutBtn =
+document.querySelector(".login-btn");
+
+
+logoutBtn.addEventListener("click",function(){
+
+localStorage.removeItem("loggedIn");
+
+});
+
+</script>
+
+
+
+<!-- =====================================
+            EXISTING JS
+===================================== -->
+
+<script src="../assets/js/bookmark.js"></script>
+
+<script src="../assets/js/history.js"></script>
+
+
+</body>
+
+</html>

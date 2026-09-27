@@ -1,0 +1,1433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Explore Stories | Story Teller</title>
+
+
+    <!-- ================= GOOGLE FONTS ================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ================= CSS ================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/stories.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header>
+
+    <nav class="navbar">
+
+
+        <div class="logo">
+
+            📖 Story Teller
+
+        </div>
+
+
+
+        <ul class="nav-links">
+
+
+            <li>
+
+                <a
+                    href="index.html"
+                    data-i18n="home"
+                >
+
+                    Home
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="stories.html"
+                    class="active"
+                    data-i18n="stories"
+                >
+
+                    Stories
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a
+                    href="about.html"
+                    data-i18n="about"
+                >
+
+                    About
+
+                </a>
+
+            </li>
+
+
+        </ul>
+
+
+
+        <div class="nav-right">
+
+
+            <button
+                id="theme-toggle"
+                class="theme-btn"
+            >
+
+                🌙
+
+            </button>
+
+
+
+            <a
+                href="login.html"
+                class="login-btn"
+                data-i18n="login"
+            >
+
+                Login
+
+            </a>
+
+
+        </div>
+
+
+    </nav>
+
+</header>
+
+
+
+<!-- =====================================================
+     STORY HERO
+===================================================== -->
+
+<main>
+
+
+<section class="stories-hero">
+
+
+    <div class="stories-background"></div>
+
+
+    <!-- Decorative elements -->
+
+    <span class="stories-orb orb-one"></span>
+
+    <span class="stories-orb orb-two"></span>
+
+    <span class="stories-orb orb-three"></span>
+
+
+    <span class="stories-star star-one">✦</span>
+
+    <span class="stories-star star-two">✦</span>
+
+    <span class="stories-star star-three">✦</span>
+
+
+
+    <div class="stories-hero-content">
+
+
+        <div
+            class="stories-badge"
+            data-i18n="storyLibrary"
+        >
+
+            ✨ YOUR STORY LIBRARY
+
+        </div>
+
+
+        <h1>
+
+            <span data-i18n="chooseYour">
+                Choose Your
+            </span>
+
+            <span data-i18n="storyWorld">
+                Story World
+            </span>
+
+        </h1>
+
+
+        <p data-i18n="storyWorldDescription">
+
+            Pick your reading world, discover a genre,
+            and let your next adventure begin.
+
+        </p>
+
+
+
+        <!-- ================= AGE SELECTOR ================= -->
+
+        <div
+            class="age-heading"
+            data-i18n="whoReading"
+        >
+
+            Who is reading?
+
+        </div>
+
+
+
+        <div class="age-selector">
+
+
+            <button
+                id="kidsBtn"
+                class="age-option"
+            >
+
+
+                <span class="age-icon">
+
+                    👧
+
+                </span>
+
+
+                <span>
+
+                    <strong data-i18n="kids">
+                        Kids
+                    </strong>
+
+                    <small data-i18n="magicalFun">
+                        Magical & fun
+                    </small>
+
+                </span>
+
+
+            </button>
+
+
+
+            <button
+                id="adultBtn"
+                class="age-option"
+            >
+
+
+                <span class="age-icon">
+
+                    🧑
+
+                </span>
+
+
+                <span>
+
+                    <strong data-i18n="adults">
+                        Adults
+                    </strong>
+
+                    <small data-i18n="deeperAdventures">
+                        Deeper adventures
+                    </small>
+
+                </span>
+
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <div class="story-search">
+
+
+            <span class="search-icon">
+
+                🔍
+
+            </span>
+
+
+            <input
+                type="text"
+                placeholder="Search stories or genres..."
+                id="searchBox"
+                autocomplete="off"
+                data-i18n-placeholder="search"
+            >
+
+
+        </div>
+
+
+        <div
+            id="searchResults"
+            class="search-results"
+        >
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     KIDS SECTION
+===================================================== -->
+
+<section
+    id="kidsSection"
+    class="genre-section"
+    style="display:none;"
+>
+
+
+    <div class="genre-section-header">
+
+
+        <span
+            class="section-kicker"
+            data-i18n="youngReaders"
+        >
+
+            👧 FOR YOUNG READERS
+
+        </span>
+
+
+        <h2 data-i18n="kidsGenres">
+
+            Kids Genres
+
+        </h2>
+
+
+        <p data-i18n="kidsGenresDescription">
+
+            Magical worlds, funny adventures,
+            meaningful lessons and stories
+            made to spark imagination.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="premium-genre-grid">
+
+
+        <!-- FANTASY -->
+
+        <article class="premium-genre-card fantasy-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    🧚
+                </span>
+
+                <span class="genre-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="fantasy">
+                Fantasy
+            </h3>
+
+
+            <p data-i18n="fantasyDescription">
+
+                Enter magical worlds filled with
+                wonder, courage and imagination.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="magicalAdventures">
+                    ✨ Magical adventures
+                </span>
+
+
+                <a
+                    href="genre.html?genre=fantasy"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- COMEDY -->
+
+        <article class="premium-genre-card comedy-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    😂
+                </span>
+
+                <span class="genre-number">
+                    02
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="comedy">
+                Comedy
+            </h3>
+
+
+            <p data-i18n="comedyDescription">
+
+                Funny characters and playful
+                adventures guaranteed to make you smile.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="funLaughter">
+                    😄 Fun & laughter
+                </span>
+
+
+                <a
+                    href="genre.html?genre=comedy"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MORAL -->
+
+        <article class="premium-genre-card moral-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    📚
+                </span>
+
+                <span class="genre-number">
+                    03
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="moral">
+                Moral
+            </h3>
+
+
+            <p data-i18n="moralDescription">
+
+                Heartwarming stories that carry
+                meaningful lessons for life.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="learnGrow">
+                    💡 Learn & grow
+                </span>
+
+
+                <a
+                    href="genre.html?genre=moral"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ANIMALS -->
+
+        <article class="premium-genre-card animals-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    🐶
+                </span>
+
+                <span class="genre-number">
+                    04
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="animals">
+                Animals
+            </h3>
+
+
+            <p data-i18n="animalsDescription">
+
+                Meet lovable animals and discover
+                adventures from their wonderful worlds.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="animalAdventures">
+                    🐾 Animal adventures
+                </span>
+
+
+                <a
+                    href="genre.html?genre=animals"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MAGIC -->
+
+        <article class="premium-genre-card magic-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    🦄
+                </span>
+
+                <span class="genre-number">
+                    05
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="magic">
+                Magic
+            </h3>
+
+
+            <p data-i18n="magicDescription">
+
+                Discover enchanted places,
+                mysterious powers and magical surprises.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="enchantedWorlds">
+                    🪄 Enchanted worlds
+                </span>
+
+
+                <a
+                    href="genre.html?genre=magic"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- BEDTIME -->
+
+        <article class="premium-genre-card bedtime-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    🌙
+                </span>
+
+                <span class="genre-number">
+                    06
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="bedtime">
+                Bedtime
+            </h3>
+
+
+            <p data-i18n="bedtimeDescription">
+
+                Calm and comforting stories
+                perfect for winding down.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="calmMoments">
+                    🌙 Calm moments
+                </span>
+
+
+                <a
+                    href="genre.html?genre=bedtime"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- FAIRY TALES -->
+
+        <article class="premium-genre-card fairy-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    🏰
+                </span>
+
+                <span class="genre-number">
+                    07
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="fairyTales">
+                Fairy Tales
+            </h3>
+
+
+            <p data-i18n="fairyTalesDescription">
+
+                Step into castles, kingdoms
+                and timeless magical adventures.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="timelessTales">
+                    👑 Timeless tales
+                </span>
+
+
+                <a
+                    href="genre.html?genre=fairytale"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ADVENTURE -->
+
+        <article class="premium-genre-card adventure-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    🚀
+                </span>
+
+                <span class="genre-number">
+                    08
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="adventure">
+                Adventure
+            </h3>
+
+
+            <p data-i18n="adventureDescription">
+
+                Exciting journeys, discoveries
+                and challenges await beyond every page.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="exploreDiscover">
+                    🚀 Explore & discover
+                </span>
+
+
+                <a
+                    href="genre.html?genre=adventure"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     ADULT SECTION
+===================================================== -->
+
+<section
+    id="adultSection"
+    class="genre-section"
+    style="display:none;"
+>
+
+
+    <div class="genre-section-header">
+
+
+        <span
+            class="section-kicker"
+            data-i18n="adultReaders"
+        >
+
+            🧑 FOR ADULT READERS
+
+        </span>
+
+
+        <h2 data-i18n="adultGenres">
+            Adult Genres
+        </h2>
+
+
+        <p data-i18n="adultGenresDescription">
+
+            Explore mysteries, suspense,
+            romance, imagination and stories
+            written for mature readers.
+
+        </p>
+
+
+    </div>
+
+
+
+    <div class="premium-genre-grid">
+
+
+        <!-- THRILLER -->
+
+        <article class="premium-genre-card thriller-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    🔪
+                </span>
+
+                <span class="genre-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="thriller">
+                Thriller
+            </h3>
+
+
+            <p data-i18n="thrillerDescription">
+
+                Fast-paced stories filled with
+                suspense, tension and unexpected turns.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="highTension">
+                    ⚡ High tension
+                </span>
+
+
+                <a
+                    href="genre.html?genre=thriller"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- HORROR -->
+
+        <article class="premium-genre-card horror-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    👻
+                </span>
+
+                <span class="genre-number">
+                    02
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="horror">
+                Horror
+            </h3>
+
+
+            <p data-i18n="horrorDescription">
+
+                Dark mysteries, eerie places
+                and stories that stay with you.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="darkMysterious">
+                    🌑 Dark & mysterious
+                </span>
+
+
+                <a
+                    href="genre.html?genre=horror"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ROMANCE -->
+
+        <article class="premium-genre-card romance-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    ❤️
+                </span>
+
+                <span class="genre-number">
+                    03
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="romance">
+                Romance
+            </h3>
+
+
+            <p data-i18n="romanceDescription">
+
+                Emotional journeys, relationships
+                and stories about connection.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="heartfeltStories">
+                    ❤️ Heartfelt stories
+                </span>
+
+
+                <a
+                    href="genre.html?genre=romance"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- COMEDY -->
+
+        <article class="premium-genre-card adult-comedy-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    😂
+                </span>
+
+                <span class="genre-number">
+                    04
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="comedy">
+                Comedy
+            </h3>
+
+
+            <p data-i18n="adultComedyDescription">
+
+                Light-hearted stories,
+                clever moments and plenty of laughter.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="funWitty">
+                    😄 Fun & witty
+                </span>
+
+
+                <a
+                    href="genre.html?genre=comedy"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MYSTERY -->
+
+        <article class="premium-genre-card mystery-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    🕵️
+                </span>
+
+                <span class="genre-number">
+                    05
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="mystery">
+                Mystery
+            </h3>
+
+
+            <p data-i18n="mysteryDescription">
+
+                Follow clues, uncover secrets
+                and solve intriguing mysteries.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="solveUnknown">
+                    🔎 Solve the unknown
+                </span>
+
+
+                <a
+                    href="genre.html?genre=mystery"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- SCI-FI -->
+
+        <article class="premium-genre-card scifi-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    🚀
+                </span>
+
+                <span class="genre-number">
+                    06
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="scifi">
+                Sci-Fi
+            </h3>
+
+
+            <p data-i18n="scifiDescription">
+
+                Explore futuristic worlds,
+                technology and extraordinary possibilities.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="beyondReality">
+                    🌌 Beyond reality
+                </span>
+
+
+                <a
+                    href="genre.html?genre=scifi"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- HISTORICAL -->
+
+        <article class="premium-genre-card historical-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    📜
+                </span>
+
+                <span class="genre-number">
+                    07
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="historical">
+                Historical
+            </h3>
+
+
+            <p data-i18n="historicalDescription">
+
+                Travel through time with stories
+                inspired by different eras and worlds.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="throughAges">
+                    🕰️ Through the ages
+                </span>
+
+
+                <a
+                    href="genre.html?genre=historical"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MOTIVATIONAL -->
+
+        <article class="premium-genre-card motivational-card">
+
+            <div class="genre-top">
+
+                <span class="genre-icon">
+                    💡
+                </span>
+
+                <span class="genre-number">
+                    08
+                </span>
+
+            </div>
+
+
+            <h3 data-i18n="motivational">
+                Motivational
+            </h3>
+
+
+            <p data-i18n="motivationalDescription">
+
+                Stories of courage, growth,
+                determination and new beginnings.
+
+            </p>
+
+
+            <div class="genre-bottom">
+
+                <span data-i18n="inspireYourself">
+                    🌟 Inspire yourself
+                </span>
+
+
+                <a
+                    href="genre.html?genre=motivational"
+                    data-i18n="explore"
+                >
+
+                    Explore
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+
+        © 2026 Story Teller
+
+        <br>
+
+        <span data-i18n="tagline">
+            Every Story Begins with a Single Click.
+        </span>
+
+    </p>
+
+</footer>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../assets/js/storyData.js"></script>
+
+<script src="../assets/js/search.js"></script>
+
+<script src="../assets/js/app.js"></script>
+
+<script src="../assets/js/language.js"></script>
+
+
+
+<!-- ================= AGE SELECTION ================= -->
+
+<script>
+
+const kidsBtn =
+    document.getElementById("kidsBtn");
+
+const adultBtn =
+    document.getElementById("adultBtn");
+
+const kidsSection =
+    document.getElementById("kidsSection");
+
+const adultSection =
+    document.getElementById("adultSection");
+
+
+
+kidsBtn.addEventListener(
+    "click",
+    function(){
+
+        kidsSection.style.display =
+            "block";
+
+        adultSection.style.display =
+            "none";
+
+
+        kidsBtn.classList.add(
+            "selected"
+        );
+
+        adultBtn.classList.remove(
+            "selected"
+        );
+
+
+        kidsSection.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
+);
+
+
+
+adultBtn.addEventListener(
+    "click",
+    function(){
+
+        kidsSection.style.display =
+            "none";
+
+        adultSection.style.display =
+            "block";
+
+
+        adultBtn.classList.add(
+            "selected"
+        );
+
+        kidsBtn.classList.remove(
+            "selected"
+        );
+
+
+        adultSection.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    }
+);
+
+</script>
+
+
+
+<!-- ================= LOGIN / PROFILE ================= -->
+
+<script>
+
+const loginBtn =
+    document.querySelector(".login-btn");
+
+
+if(
+    localStorage.getItem("loggedIn")
+    === "true"
+){
+
+    loginBtn.innerHTML =
+        "Profile";
+
+    loginBtn.href =
+        "profile.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

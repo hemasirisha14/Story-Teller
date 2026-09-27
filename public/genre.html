@@ -1,0 +1,827 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Choose Story | Story Teller</title>
+
+
+<!-- Google Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- Main CSS -->
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link rel="stylesheet" href="../assets/css/genre.css">
+
+<link rel="stylesheet" href="../assets/css/responsive.css">
+
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+                        NAVBAR
+===================================================== -->
+
+<nav class="navbar">
+
+
+    <div class="logo">
+        📖 Story Teller
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html" data-i18n="home">
+            Home
+        </a>
+
+        <a href="stories.html" data-i18n="stories">
+            Stories
+        </a>
+
+        <a href="about.html" data-i18n="about">
+            About
+        </a>
+
+    </div>
+
+
+    <div class="nav-right">
+
+        <button
+            id="theme-toggle"
+            class="theme-btn"
+            aria-label="Toggle dark mode"
+        >
+            🌙
+        </button>
+
+
+        <a
+            href="login.html"
+            class="login-btn"
+            data-i18n="login"
+        >
+            Login
+        </a>
+
+    </div>
+
+
+</nav>
+
+
+
+<!-- =====================================================
+                    PREMIUM BACKGROUND
+===================================================== -->
+
+<div class="genre-background">
+
+    <span class="genre-orb orb-one"></span>
+
+    <span class="genre-orb orb-two"></span>
+
+    <span class="genre-orb orb-three"></span>
+
+
+    <span class="genre-star star-one">✦</span>
+
+    <span class="genre-star star-two">✧</span>
+
+    <span class="genre-star star-three">✦</span>
+
+    <span class="genre-star star-four">✧</span>
+
+</div>
+
+
+
+<!-- =====================================================
+                  STORY COLLECTION
+===================================================== -->
+
+<main class="story-library">
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="story-library-header">
+
+
+        <div class="collection-badge">
+
+            <span>✦</span>
+
+            <span data-i18n="storyCollection">
+                STORY COLLECTION
+            </span>
+
+            <span>✦</span>
+
+        </div>
+
+
+        <div
+            class="genre-main-icon"
+            id="genreIcon"
+        >
+            📖
+        </div>
+
+
+        <h1 id="genreTitle">
+            Choose Your Story
+        </h1>
+
+
+        <p id="genreDescription">
+            Select a story and enter a world of imagination.
+        </p>
+
+
+        <div class="header-line"></div>
+
+
+    </header>
+
+
+
+    <!-- ================= STORY GRID ================= -->
+
+    <section
+        class="story-grid"
+        id="storyList"
+    >
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+                        FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-logo">
+        📖 Story Teller
+    </div>
+
+    <p data-i18n="tagline">
+        Every Story Begins with a Single Click.
+    </p>
+
+    <small>
+        © 2026 Story Teller. All rights reserved.
+    </small>
+
+</footer>
+
+
+
+<!-- =====================================================
+                     STORY DATA
+===================================================== -->
+
+<script src="../assets/js/storyData.js"></script>
+
+
+<!-- =====================================================
+                    LANGUAGE SYSTEM
+===================================================== -->
+
+<script src="../assets/js/language.js"></script>
+
+
+
+<!-- =====================================================
+                  GENERATE STORIES
+===================================================== -->
+
+<script>
+
+
+/* =====================================
+        GET SELECTED GENRE
+===================================== */
+
+const params =
+    new URLSearchParams(window.location.search);
+
+
+const genre =
+    params.get("genre");
+
+
+
+/* =====================================
+        GET ELEMENTS
+===================================== */
+
+const stories =
+    storyData[genre];
+
+
+const storyList =
+    document.getElementById("storyList");
+
+
+const genreTitle =
+    document.getElementById("genreTitle");
+
+
+const genreDescription =
+    document.getElementById("genreDescription");
+
+
+const genreIcon =
+    document.getElementById("genreIcon");
+
+
+
+/* =====================================
+        GENRE ICONS
+===================================== */
+
+function getStoryIcon(genre) {
+
+    const icons = {
+
+        fantasy: "🧚",
+
+        comedy: "😂",
+
+        moral: "📚",
+
+        animals: "🐶",
+
+        magic: "🦄",
+
+        bedtime: "🌙",
+
+        fairytale: "🏰",
+
+        adventure: "🚀",
+
+        thriller: "🔪",
+
+        horror: "👻",
+
+        romance: "❤️",
+
+        mystery: "🕵️",
+
+        scifi: "🚀",
+
+        historical: "📜",
+
+        motivational: "💡"
+
+    };
+
+
+    return icons[genre] || "📖";
+
+}
+
+
+
+/* =====================================
+        GENRE DESCRIPTIONS
+===================================== */
+
+function getGenreDescription(genre) {
+
+    const descriptions = {
+
+        fantasy:
+            "Step into magical worlds filled with wonder, courage and unforgettable adventures.",
+
+        comedy:
+            "Get ready for laughter, funny moments and stories that will brighten your day.",
+
+        moral:
+            "Discover meaningful stories filled with valuable lessons and inspiring moments.",
+
+        animals:
+            "Meet lovable animals and discover heartwarming adventures from their world.",
+
+        magic:
+            "Enter a magical world where imagination comes alive and anything is possible.",
+
+        bedtime:
+            "Relax, slow down and enjoy gentle stories perfect for peaceful bedtime reading.",
+
+        fairytale:
+            "Enter enchanted kingdoms filled with castles, magic, heroes and happily-ever-afters.",
+
+        adventure:
+            "Get ready for exciting journeys, brave heroes and unforgettable discoveries.",
+
+        thriller:
+            "Prepare for suspenseful journeys filled with tension, secrets and unexpected turns.",
+
+        horror:
+            "Enter mysterious worlds where strange events, shadows and secrets await.",
+
+        romance:
+            "Discover stories about relationships, emotions, connections and unforgettable moments.",
+
+        mystery:
+            "Follow the clues, uncover hidden secrets and solve fascinating mysteries.",
+
+        scifi:
+            "Explore futuristic worlds, advanced technology, space and extraordinary possibilities.",
+
+        historical:
+            "Travel through time and experience stories inspired by remarkable moments from history.",
+
+        motivational:
+            "Find inspiration through stories about courage, growth, determination and success."
+
+    };
+
+
+    return descriptions[genre] ||
+        "Select a story and enter a world of imagination.";
+
+}
+
+
+
+/* =====================================
+        TRANSLATED GENRE DESCRIPTIONS
+===================================== */
+
+const genreDescriptionKeys = {
+
+    fantasy: "fantasyDescription",
+
+    comedy: "comedyDescription",
+
+    moral: "moralDescription",
+
+    animals: "animalsDescription",
+
+    magic: "magicDescription",
+
+    bedtime: "bedtimeDescription",
+
+    fairytale: "fairyTalesDescription",
+
+    adventure: "adventureDescription",
+
+    thriller: "thrillerDescription",
+
+    horror: "horrorDescription",
+
+    romance: "romanceDescription",
+
+    mystery: "mysteryDescription",
+
+    scifi: "scifiDescription",
+
+    historical: "historicalDescription",
+
+    motivational: "motivationalDescription"
+
+};
+
+
+
+/* =====================================
+        TRANSLATED GENRE NAMES
+===================================== */
+
+const genreTranslationKeys = {
+
+    fantasy: "fantasy",
+
+    comedy: "comedy",
+
+    moral: "moral",
+
+    animals: "animals",
+
+    magic: "magic",
+
+    bedtime: "bedtime",
+
+    fairytale: "fairyTales",
+
+    adventure: "adventure",
+
+    thriller: "thriller",
+
+    horror: "horror",
+
+    romance: "romance",
+
+    mystery: "mystery",
+
+    scifi: "scifi",
+
+    historical: "historical",
+
+    motivational: "motivational"
+
+};
+
+
+
+/* =====================================
+        CHECK GENRE
+===================================== */
+
+if (
+    !stories ||
+    !Array.isArray(stories)
+) {
+
+
+    genreTitle.innerText =
+        "Genre Not Found";
+
+
+    genreDescription.innerText =
+        "The story world you are looking for could not be found.";
+
+
+    genreIcon.innerText =
+        "📖";
+
+
+    storyList.innerHTML = `
+
+        <div class="story-empty">
+
+            <div class="empty-icon">
+                📖
+            </div>
+
+            <h2 data-i18n="storyWorldNotFound">
+                Story World Not Found
+            </h2>
+
+            <p data-i18n="genreDoesNotExist">
+                Sorry, this genre does not exist.
+            </p>
+
+            <a
+                href="stories.html"
+                class="back-to-stories"
+                data-i18n="exploreAllGenres"
+            >
+                ← Explore All Genres
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+/* =====================================
+        SHOW STORIES
+===================================== */
+
+else {
+
+
+    /* ===============================
+            GET TRANSLATED GENRE
+    =============================== */
+
+    const genreKey =
+        genreTranslationKeys[genre] || null;
+
+
+    const translatedGenre =
+        genreKey
+            ? getTranslation(genreKey)
+            : (
+                genre.charAt(0).toUpperCase() +
+                genre.slice(1)
+            );
+
+
+    const translatedStories =
+        getTranslation("stories");
+
+
+    const translatedDescriptionKey =
+        genreDescriptionKeys[genre];
+
+
+    const translatedDescription =
+        translatedDescriptionKey
+            ? getTranslation(translatedDescriptionKey)
+            : getGenreDescription(genre);
+
+
+
+    /* ===============================
+            UPDATE HEADER
+    =============================== */
+
+    genreTitle.innerText =
+        `${translatedGenre} ${translatedStories}`;
+
+
+    genreDescription.innerText =
+        translatedDescription;
+
+
+    genreIcon.innerText =
+        getStoryIcon(genre);
+
+
+
+    /* ===============================
+            CLEAR GRID
+    =============================== */
+
+    storyList.innerHTML = "";
+
+
+
+    /* ===============================
+            CREATE STORY CARDS
+    =============================== */
+
+    stories.forEach((story, index) => {
+
+
+        const storyNumber =
+            String(index + 1).padStart(2, "0");
+
+
+        storyList.innerHTML += `
+
+            <article
+                class="story-card"
+                style="--card-delay:${index * 0.12}s"
+            >
+
+
+                <!-- STORY VISUAL -->
+
+                <div class="story-visual">
+
+
+                    <div class="visual-glow"></div>
+
+
+                    <div class="story-icon">
+
+                        ${getStoryIcon(genre)}
+
+                    </div>
+
+
+                    <span class="story-number">
+
+                        ${storyNumber}
+
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- STORY CONTENT -->
+
+                <div class="story-card-content">
+
+
+                    <div class="story-top">
+
+
+                        <span class="story-label">
+
+                            ${getTranslation("story")} ${storyNumber}
+
+                        </span>
+
+
+                        <span class="story-rating">
+
+                            ⭐ ${story.rating}
+
+                        </span>
+
+
+                    </div>
+
+
+
+                    <h2>
+
+                        ${story.title}
+
+                    </h2>
+
+
+
+                    <span class="story-genre">
+
+                        ${translatedGenre}
+
+                    </span>
+
+
+
+                    <div class="story-info">
+
+
+                        <span>
+
+                            📖 ${story.pages.length} ${getTranslation("pages")}
+
+                        </span>
+
+
+                        <span>
+
+                            ✨ ${getTranslation("originalStory")}
+
+                        </span>
+
+
+                    </div>
+
+
+
+                    <a
+                        href="story.html?genre=${genre}&story=${index}"
+                        class="story-read-btn"
+                    >
+
+                        <span>
+
+                            ${getTranslation("readThisStory")}
+
+                        </span>
+
+
+                        <strong>
+
+                            →
+
+                        </strong>
+
+                    </a>
+
+
+                </div>
+
+
+            </article>
+
+        `;
+
+    });
+
+}
+
+
+/* =====================================
+        APPLY PAGE LANGUAGE
+===================================== */
+
+applyLanguage();
+
+
+</script>
+
+
+
+<!-- =====================================================
+                    LOGIN CHECK
+===================================================== -->
+
+<script>
+
+
+const loginBtn =
+    document.querySelector(".login-btn");
+
+
+if (
+    localStorage.getItem("loggedIn") === "true"
+) {
+
+    loginBtn.innerHTML =
+        getTranslation("profile");
+
+    loginBtn.href =
+        "profile.html";
+
+}
+
+
+</script>
+
+
+
+<!-- =====================================================
+                    DARK MODE
+===================================================== -->
+
+<script>
+
+
+const toggle =
+    document.getElementById("theme-toggle");
+
+
+/* Load saved theme */
+
+if (
+    localStorage.getItem("theme") === "dark"
+) {
+
+    document.body.classList.add("dark");
+
+    toggle.innerHTML =
+        "☀️";
+
+}
+
+
+/* Toggle theme */
+
+toggle.onclick = () => {
+
+
+    document.body.classList.toggle("dark");
+
+
+    if (
+        document.body.classList.contains("dark")
+    ) {
+
+
+        localStorage.setItem(
+            "theme",
+            "dark"
+        );
+
+
+        toggle.innerHTML =
+            "☀️";
+
+    }
+
+
+    else {
+
+
+        localStorage.setItem(
+            "theme",
+            "light"
+        );
+
+
+        toggle.innerHTML =
+            "🌙";
+
+    }
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>

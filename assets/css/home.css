@@ -1,0 +1,1267 @@
+/* =====================================================
+   STORY TELLER - PREMIUM HOME PAGE
+===================================================== */
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding-top: 100px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+.gradient-bg {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -10;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.18),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255,255,255,.14),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #5b21b6,
+            #7c3aed,
+            #db2777,
+            #2563eb
+        );
+
+    background-size: 180% 180%;
+
+    animation:
+        premiumGradient 16s ease infinite;
+
+}
+
+
+@keyframes premiumGradient {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+/* =====================================================
+   HERO GLOW
+===================================================== */
+
+.hero-glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    pointer-events: none;
+
+    opacity: .35;
+
+}
+
+
+.hero-glow-one {
+
+    width: 300px;
+
+    height: 300px;
+
+    background: rgba(255,255,255,.3);
+
+    top: 12%;
+
+    left: 8%;
+
+}
+
+
+.hero-glow-two {
+
+    width: 350px;
+
+    height: 350px;
+
+    background: rgba(255,255,255,.2);
+
+    bottom: 5%;
+
+    right: 5%;
+
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: min(850px, 90%);
+
+    text-align: center;
+
+    padding: 60px 20px 100px;
+
+}
+
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 18px;
+
+    margin-bottom: 28px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,.13);
+
+    border: 1px solid rgba(255,255,255,.28);
+
+    backdrop-filter: blur(12px);
+
+    color: rgba(255,255,255,.95);
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.1);
+
+}
+
+
+.badge-icon {
+
+    font-size: 17px;
+
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.hero-content h1 {
+
+    margin: 0 auto;
+
+    max-width: 850px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: clamp(
+        52px,
+        7vw,
+        88px
+    );
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    font-weight: 700;
+
+    color: white;
+
+    text-shadow:
+        0 10px 40px rgba(0,0,0,.2);
+
+}
+
+
+.hero-content h1 span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffe082,
+            #fff,
+            #ffd166
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.hero-description {
+
+    max-width: 680px;
+
+    margin: 30px auto 0;
+
+    color: rgba(255,255,255,.88);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.hero-buttons {
+
+    margin-top: 38px;
+
+}
+
+
+.hero-main-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    padding: 17px 30px;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: #3b217e;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.2);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+
+}
+
+
+.hero-main-btn:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.02);
+
+    box-shadow:
+        0 22px 50px rgba(0,0,0,.28);
+
+    background: #fffdf5;
+
+}
+
+
+.arrow {
+
+    font-size: 21px;
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.hero-main-btn:hover .arrow {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =====================================================
+   HERO FEATURES
+===================================================== */
+
+.hero-features {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin-top: 55px;
+
+}
+
+
+.hero-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+
+    padding: 13px 17px;
+
+    min-width: 190px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.10);
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:
+        blur(14px);
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+
+}
+
+
+.hero-feature:hover {
+
+    transform:
+        translateY(-4px);
+
+    background:
+        rgba(255,255,255,.17);
+
+}
+
+
+.feature-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.15);
+
+    font-size: 19px;
+
+}
+
+
+.hero-feature strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    color: white;
+
+}
+
+
+.hero-feature small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 11px;
+
+    color:
+        rgba(255,255,255,.68);
+
+}
+
+
+/* =====================================================
+   FLOATING STORY CARD
+===================================================== */
+
+.floating-story-card {
+
+    position: absolute;
+
+    z-index: 4;
+
+    right: 5%;
+
+    top: 25%;
+
+    width: 235px;
+
+    padding: 20px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    border:
+        1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.2);
+
+    transform:
+        rotate(4deg);
+
+    animation:
+        floatingCard 5s ease-in-out infinite;
+
+}
+
+
+@keyframes floatingCard {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(4deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-15px)
+            rotate(2deg);
+
+    }
+
+}
+
+
+.story-card-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: white;
+
+}
+
+
+.mini-book {
+
+    width: 35px;
+
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.15);
+
+}
+
+
+.mini-label {
+
+    flex: 1;
+
+    margin-left: 10px;
+
+    font-size: 11px;
+
+    opacity: .75;
+
+}
+
+
+.mini-star {
+
+    color: #ffe082;
+
+}
+
+
+.story-card-body {
+
+    margin-top: 20px;
+
+}
+
+
+.story-quote {
+
+    display: block;
+
+    height: 20px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 40px;
+
+    color: #ffe082;
+
+}
+
+
+.story-card-body h3 {
+
+    margin-top: 7px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 21px;
+
+    color: white;
+
+}
+
+
+.story-card-body p {
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(255,255,255,.72);
+
+}
+
+
+.story-card-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top:
+        1px solid rgba(255,255,255,.15);
+
+    color: #ffe082;
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   FLOATING DECORATIONS
+===================================================== */
+
+.circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    background:
+        rgba(255,255,255,.04);
+
+    backdrop-filter:
+        blur(2px);
+
+    pointer-events: none;
+
+}
+
+
+.circle1 {
+
+    width: 180px;
+
+    height: 180px;
+
+    top: 15%;
+
+    left: 4%;
+
+    animation:
+        floatOne 7s ease-in-out infinite;
+
+}
+
+
+.circle2 {
+
+    width: 100px;
+
+    height: 100px;
+
+    bottom: 15%;
+
+    left: 15%;
+
+    animation:
+        floatTwo 6s ease-in-out infinite;
+
+}
+
+
+.circle3 {
+
+    width: 150px;
+
+    height: 150px;
+
+    top: 12%;
+
+    right: 24%;
+
+    animation:
+        floatTwo 8s ease-in-out infinite;
+
+}
+
+
+.circle4 {
+
+    width: 70px;
+
+    height: 70px;
+
+    bottom: 20%;
+
+    right: 15%;
+
+    animation:
+        floatOne 5s ease-in-out infinite;
+
+}
+
+
+@keyframes floatOne {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-20px);
+    }
+
+}
+
+
+@keyframes floatTwo {
+
+    0%,
+    100% {
+        transform:
+            translate(0,0);
+    }
+
+    50% {
+        transform:
+            translate(15px,-15px);
+    }
+
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+.star {
+
+    position: absolute;
+
+    color:
+        rgba(255,255,255,.65);
+
+    font-size: 22px;
+
+    animation:
+        starFloat 4s ease-in-out infinite;
+
+}
+
+
+.star1 {
+
+    top: 23%;
+
+    left: 25%;
+
+}
+
+
+.star2 {
+
+    top: 17%;
+
+    right: 35%;
+
+    animation-delay: 1s;
+
+}
+
+
+.star3 {
+
+    bottom: 25%;
+
+    left: 30%;
+
+    animation-delay: 2s;
+
+}
+
+
+.star4 {
+
+    bottom: 18%;
+
+    right: 28%;
+
+    animation-delay: 1.5s;
+
+}
+
+
+.star5 {
+
+    top: 35%;
+
+    right: 10%;
+
+    font-size: 14px;
+
+    animation-delay: .5s;
+
+}
+
+
+@keyframes starFloat {
+
+    0%,
+    100% {
+
+        opacity: .35;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            translateY(-10px)
+            scale(1.2);
+
+    }
+
+}
+
+
+/* =====================================================
+   DISCOVER SECTION
+===================================================== */
+
+.discover-section {
+
+    position: relative;
+
+    padding:
+        110px 6%
+        120px;
+
+    background:
+        rgba(255,255,255,.96);
+
+    color: #1f2340;
+
+}
+
+
+.discover-container {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
+
+.section-heading {
+
+    max-width: 700px;
+
+    margin:
+        0 auto 55px;
+
+    text-align: center;
+
+}
+
+
+.section-label {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #6c5ce7;
+
+}
+
+
+.section-heading h2 {
+
+    margin-top: 12px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(32px,5vw,52px);
+
+    line-height: 1.15;
+
+}
+
+
+.section-heading p {
+
+    margin-top: 16px;
+
+    color: #697085;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   DISCOVER GRID
+===================================================== */
+
+.discover-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 25px;
+
+}
+
+
+.discover-card {
+
+    padding: 35px 30px;
+
+    border-radius: 25px;
+
+    background: #f8f8fc;
+
+    border:
+        1px solid #eeeeF5;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.discover-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(40,30,90,.10);
+
+}
+
+
+.discover-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        #eeeaff;
+
+    font-size: 27px;
+
+}
+
+
+.discover-card h3 {
+
+    margin-top: 22px;
+
+    font-size: 21px;
+
+}
+
+
+.discover-card p {
+
+    margin-top: 10px;
+
+    color: #73798d;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+body.dark .discover-section {
+
+    background:
+        #080b18;
+
+    color: white;
+
+}
+
+
+body.dark .section-heading p {
+
+    color:
+        #a8adbd;
+
+}
+
+
+body.dark .discover-card {
+
+    background:
+        rgba(255,255,255,.055);
+
+    border-color:
+        rgba(255,255,255,.08);
+
+}
+
+
+body.dark .discover-card p {
+
+    color:
+        #a8adbd;
+
+}
+
+
+body.dark .discover-icon {
+
+    background:
+        rgba(108,92,231,.18);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+body.dark footer {
+
+    background:
+        #050711;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1100px) {
+
+    .floating-story-card {
+
+        right: 2%;
+
+        transform:
+            scale(.9)
+            rotate(4deg);
+
+    }
+
+    .hero-content {
+
+        width: 75%;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:850px) {
+
+    .floating-story-card {
+
+        display: none;
+
+    }
+
+
+    .hero-content {
+
+        width: 94%;
+
+        padding-top: 45px;
+
+    }
+
+
+    .hero-content h1 {
+
+        font-size:
+            clamp(44px,10vw,68px);
+
+        letter-spacing:
+            -1px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .hero-features {
+
+        gap: 10px;
+
+        margin-top: 40px;
+
+    }
+
+
+    .hero-feature {
+
+        min-width:
+            160px;
+
+    }
+
+
+    .discover-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:500px) {
+
+    .hero {
+
+        padding-top: 90px;
+
+    }
+
+
+    .hero-content {
+
+        padding:
+            35px 10px 70px;
+
+    }
+
+
+    .hero-badge {
+
+        font-size: 12px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 15px;
+
+    }
+
+
+    .hero-main-btn {
+
+        width: 100%;
+
+        max-width: 280px;
+
+    }
+
+
+    .hero-features {
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+
+    .hero-feature {
+
+        width: 100%;
+
+        max-width: 300px;
+
+    }
+
+
+    .discover-section {
+
+        padding:
+            80px 20px;
+
+    }
+
+}

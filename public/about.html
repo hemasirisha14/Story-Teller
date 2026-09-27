@@ -1,0 +1,1921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | Story Teller</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Existing Styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/home.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <style>
+
+        /* =========================================
+           ABOUT PAGE
+        ========================================= */
+
+        body {
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .about-page {
+            padding-top: 100px;
+            overflow: hidden;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .about-hero {
+            position: relative;
+            min-height: 72vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 90px 20px;
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(255,255,255,.15),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(255,255,255,.12),
+                    transparent 30%
+                );
+        }
+
+
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 950px;
+
+            animation: aboutHeroIn 1s ease;
+        }
+
+
+        @keyframes aboutHeroIn {
+
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        .about-badge {
+
+            display: inline-flex;
+
+            align-items: center;
+            gap: 8px;
+
+            padding: 10px 20px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,.15);
+
+            border: 1px solid rgba(255,255,255,.25);
+
+            backdrop-filter: blur(15px);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 28px;
+
+        }
+
+
+        .about-hero h1 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(48px, 7vw, 88px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+
+            color: white;
+
+        }
+
+
+        .about-hero h1 span {
+
+            color: #FFD54F;
+
+        }
+
+
+        .about-tagline {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(22px, 3vw, 34px);
+
+            font-style: italic;
+
+            color: #fff;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .about-description {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            font-size: 18px;
+
+            line-height: 1.9;
+
+            color: rgba(255,255,255,.88);
+
+        }
+
+
+        .about-hero-buttons {
+
+            margin-top: 35px;
+
+        }
+
+
+        .about-hero-buttons a {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            margin: 7px;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            transition: .3s;
+
+        }
+
+
+        .about-primary {
+
+            background: #FFD54F;
+
+            color: #222;
+
+        }
+
+
+        .about-secondary {
+
+            border: 1px solid rgba(255,255,255,.5);
+
+            color: white;
+
+            background: rgba(255,255,255,.08);
+
+            backdrop-filter: blur(10px);
+
+        }
+
+
+        .about-hero-buttons a:hover {
+
+            transform: translateY(-4px);
+
+        }
+
+
+        /* =========================================
+           COMMON SECTION
+        ========================================= */
+
+        .about-section {
+
+            padding: 100px 7%;
+
+            position: relative;
+
+        }
+
+
+        .about-section-inner {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+        }
+
+
+        .section-label {
+
+            color: #FFD54F;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .about-section h2 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(34px, 4vw, 52px);
+
+            margin-bottom: 20px;
+
+            color: white;
+
+        }
+
+
+        .section-intro {
+
+            max-width: 720px;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+
+            color: rgba(255,255,255,.78);
+
+        }
+
+
+        /* =========================================
+           WHAT IS STORY TELLER
+        ========================================= */
+
+        .about-story {
+
+            display: grid;
+
+            grid-template-columns: 1.1fr .9fr;
+
+            gap: 70px;
+
+            align-items: center;
+
+        }
+
+
+        .story-text p {
+
+            line-height: 1.9;
+
+            color: rgba(255,255,255,.82);
+
+            font-size: 17px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .story-quote-card {
+
+            padding: 45px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,.10);
+
+            border: 1px solid rgba(255,255,255,.18);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow: 0 25px 60px rgba(0,0,0,.18);
+
+            text-align: center;
+
+        }
+
+
+        .story-quote-icon {
+
+            font-size: 58px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .story-quote-card h3 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .story-quote-card p {
+
+            color: rgba(255,255,255,.75);
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =========================================
+           VISION
+        ========================================= */
+
+        .vision-section {
+
+            background: rgba(0,0,0,.12);
+
+        }
+
+
+        .vision-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-top: 50px;
+
+        }
+
+
+        .vision-card {
+
+            padding: 35px 30px;
+
+            border-radius: 25px;
+
+            background: rgba(255,255,255,.10);
+
+            border: 1px solid rgba(255,255,255,.15);
+
+            backdrop-filter: blur(15px);
+
+            transition: .35s;
+
+        }
+
+
+        .vision-card:hover {
+
+            transform: translateY(-8px);
+
+            background: rgba(255,255,255,.15);
+
+        }
+
+
+        .vision-number {
+
+            font-size: 13px;
+
+            color: #FFD54F;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .vision-icon {
+
+            font-size: 40px;
+
+            margin: 20px 0;
+
+        }
+
+
+        .vision-card h3 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 25px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .vision-card p {
+
+            line-height: 1.7;
+
+            color: rgba(255,255,255,.72);
+
+        }
+
+
+        /* =========================================
+           FEATURES
+        ========================================= */
+
+        .features-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+
+            margin-top: 50px;
+
+        }
+
+
+        .feature-card {
+
+            padding: 28px 22px;
+
+            border-radius: 22px;
+
+            background: rgba(255,255,255,.09);
+
+            border: 1px solid rgba(255,255,255,.14);
+
+            backdrop-filter: blur(12px);
+
+            transition: .3s;
+
+        }
+
+
+        .feature-card:hover {
+
+            transform: translateY(-6px);
+
+            background: rgba(255,255,255,.14);
+
+        }
+
+
+        .feature-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background: rgba(255,213,79,.15);
+
+            font-size: 27px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .feature-card h3 {
+
+            font-size: 18px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .feature-card p {
+
+            font-size: 14px;
+
+            line-height: 1.7;
+
+            color: rgba(255,255,255,.68);
+
+        }
+
+
+        /* =========================================
+           TECHNOLOGY
+        ========================================= */
+
+        .technology-section {
+
+            background: rgba(0,0,0,.12);
+
+        }
+
+
+        .technology-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 18px;
+
+            margin-top: 45px;
+
+        }
+
+
+        .technology-card {
+
+            padding: 28px 15px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,.09);
+
+            border: 1px solid rgba(255,255,255,.14);
+
+            transition: .3s;
+
+        }
+
+
+        .technology-card:hover {
+
+            transform: translateY(-5px);
+
+        }
+
+
+        .technology-icon {
+
+            font-size: 34px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .technology-card h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .technology-card p {
+
+            font-size: 13px;
+
+            color: rgba(255,255,255,.62);
+
+        }
+
+
+        /* =========================================
+           CREATOR
+        ========================================= */
+
+        .creator-section {
+
+            padding-bottom: 110px;
+
+        }
+
+
+        .creator-card {
+
+            max-width: 900px;
+
+            margin: 55px auto 0;
+
+            padding: 55px;
+
+            text-align: center;
+
+            border-radius: 35px;
+
+            background: rgba(255,255,255,.11);
+
+            border: 1px solid rgba(255,255,255,.18);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow: 0 25px 70px rgba(0,0,0,.2);
+
+        }
+
+
+        .creator-avatar {
+
+            width: 105px;
+
+            height: 105px;
+
+            margin: auto auto 25px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: linear-gradient(
+                135deg,
+                #FFD54F,
+                #ff9f43
+            );
+
+            font-size: 42px;
+
+            box-shadow: 0 15px 35px rgba(0,0,0,.2);
+
+        }
+
+
+        .creator-card h2 {
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .creator-role {
+
+            color: #FFD54F;
+
+            font-weight: 600;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .creator-card p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            line-height: 1.9;
+
+            color: rgba(255,255,255,.78);
+
+        }
+
+
+        .creator-quote {
+
+            font-family: "Playfair Display", serif;
+
+            font-style: italic;
+
+            font-size: 21px;
+
+            margin-top: 30px !important;
+
+            color: white !important;
+
+        }
+
+
+        /* =========================================
+           CREATION DETAILS
+        ========================================= */
+
+        .creation-details {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-top: 35px;
+
+        }
+
+
+        .creation-item {
+
+            padding: 22px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,.07);
+
+        }
+
+
+        .creation-item span {
+
+            display: block;
+
+            font-size: 11px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            color: rgba(255,255,255,.5);
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .creation-item strong {
+
+            font-size: 16px;
+
+        }
+
+
+        /* =========================================
+           FINAL CTA
+        ========================================= */
+
+        .about-final {
+
+            text-align: center;
+
+            padding: 80px 20px 100px;
+
+            background: rgba(0,0,0,.15);
+
+        }
+
+
+        .about-final h2 {
+
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(34px, 5vw, 55px);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .about-final p {
+
+            color: rgba(255,255,255,.7);
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .about-final a {
+
+            display: inline-block;
+
+            padding: 15px 32px;
+
+            background: #FFD54F;
+
+            color: #222;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: 700;
+
+            transition: .3s;
+
+        }
+
+
+        .about-final a:hover {
+
+            transform: translateY(-4px);
+
+        }
+
+
+        /* =========================================
+           DARK MODE
+        ========================================= */
+
+        body.dark .about-hero {
+
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(99,102,241,.14),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(168,85,247,.12),
+                    transparent 30%
+                );
+
+        }
+
+
+        body.dark .vision-section,
+        body.dark .technology-section,
+        body.dark .about-final {
+
+            background: #080b18;
+
+        }
+
+
+        body.dark .story-quote-card,
+        body.dark .vision-card,
+        body.dark .feature-card,
+        body.dark .technology-card,
+        body.dark .creator-card {
+
+            background: rgba(255,255,255,.06);
+
+            border-color: rgba(255,255,255,.09);
+
+        }
+
+
+        body.dark .creation-item {
+
+            background: rgba(255,255,255,.05);
+
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 1000px) {
+
+            .features-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            .technology-grid {
+
+                grid-template-columns: repeat(3, 1fr);
+
+            }
+
+            .creation-details {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            .about-story {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .vision-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .about-page {
+
+                padding-top: 80px;
+
+            }
+
+            .about-section {
+
+                padding: 70px 20px;
+
+            }
+
+            .about-hero {
+
+                min-height: 75vh;
+
+                padding: 70px 20px;
+
+            }
+
+            .features-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .technology-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+            .creation-details {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .creator-card {
+
+                padding: 35px 22px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📖 Story Teller
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="stories.html">
+                Stories
+            </a>
+
+            <a href="about.html" class="active">
+                About
+            </a>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <button
+                id="theme-toggle"
+                class="theme-btn"
+                aria-label="Toggle dark mode"
+            >
+                🌙
+            </button>
+
+            <a
+                href="login.html"
+                class="login-btn"
+                id="authButton"
+            >
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <main class="about-page">
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="about-hero">
+
+            <div class="about-hero-content">
+
+                <div class="about-badge">
+                    ✨ THE WORLD OF STORY TELLER
+                </div>
+
+
+                <h1>
+                    Welcome to
+                    <span>Story Teller</span>
+                </h1>
+
+
+                <div class="about-tagline">
+                    “Every Story Begins with a Single Click.”
+                </div>
+
+
+                <p class="about-description">
+
+                    A place where imagination meets technology,
+                    and every reader can discover a story worth
+                    getting lost in.
+
+                </p>
+
+
+                <div class="about-hero-buttons">
+
+                    <a
+                        href="stories.html"
+                        class="about-primary"
+                    >
+                        📚 Explore Stories
+                    </a>
+
+
+                    <a
+                        href="#story"
+                        class="about-secondary"
+                    >
+                        Discover Story Teller ↓
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             WHAT IS STORY TELLER
+        ========================================== -->
+
+        <section
+            class="about-section"
+            id="story"
+        >
+
+            <div class="about-section-inner">
+
+                <div class="about-story">
+
+
+                    <div class="story-text">
+
+                        <div class="section-label">
+                            ABOUT STORY TELLER
+                        </div>
+
+
+                        <h2>
+                            More Than Just Stories
+                        </h2>
+
+
+                        <p>
+
+                            Story Teller is an interactive storytelling
+                            experience created for children, teenagers,
+                            and adults.
+
+                        </p>
+
+
+                        <p>
+
+                            From Fantasy and Comedy to Horror, Thriller,
+                            Romance, Moral stories, and many more worlds,
+                            Story Teller gives readers a simple and
+                            enjoyable way to discover something new.
+
+                        </p>
+
+
+                        <p>
+
+                            Reading becomes more personal with features
+                            such as Read Aloud, bookmarks, favourite
+                            stories, reading history, customizable fonts,
+                            age-based collections, and light and dark
+                            reading modes.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="story-quote-card">
+
+                        <div class="story-quote-icon">
+                            📖
+                        </div>
+
+
+                        <h3>
+                            A Story Is a Door
+                        </h3>
+
+
+                        <p>
+
+                            Open it, and you never know what world
+                            you might discover on the other side.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             VISION
+        ========================================== -->
+
+        <section class="about-section vision-section">
+
+            <div class="about-section-inner">
+
+                <div class="section-label">
+                    THE IDEA
+                </div>
+
+
+                <h2>
+                    Why Story Teller?
+                </h2>
+
+
+                <p class="section-intro">
+
+                    Story Teller was created around three simple ideas:
+                    make reading enjoyable, make technology useful,
+                    and make stories accessible to everyone.
+
+                </p>
+
+
+                <div class="vision-grid">
+
+
+                    <div class="vision-card">
+
+                        <div class="vision-number">
+                            01
+                        </div>
+
+                        <div class="vision-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Encourage Reading
+                        </h3>
+
+                        <p>
+
+                            Create an enjoyable digital environment
+                            that encourages readers to discover and
+                            explore different stories.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="vision-card">
+
+                        <div class="vision-number">
+                            02
+                        </div>
+
+                        <div class="vision-icon">
+                            💡
+                        </div>
+
+                        <h3>
+                            Bring Technology Into Reading
+                        </h3>
+
+                        <p>
+
+                            Combine storytelling with modern web
+                            technologies to create a more interactive
+                            reading experience.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="vision-card">
+
+                        <div class="vision-number">
+                            03
+                        </div>
+
+                        <div class="vision-icon">
+                            🌍
+                        </div>
+
+                        <h3>
+                            Stories for Everyone
+                        </h3>
+
+                        <p>
+
+                            Create a welcoming space where children,
+                            teenagers, and adults can find stories
+                            they enjoy.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             FEATURES
+        ========================================== -->
+
+        <section class="about-section">
+
+            <div class="about-section-inner">
+
+                <div class="section-label">
+                    THE EXPERIENCE
+                </div>
+
+
+                <h2>
+                    Made for the Way You Read
+                </h2>
+
+
+                <p class="section-intro">
+
+                    Everything in Story Teller is designed to make
+                    discovering, reading, and enjoying stories
+                    more comfortable.
+
+                </p>
+
+
+                <div class="features-grid">
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Multiple Genres
+                        </h3>
+
+                        <p>
+
+                            Explore Fantasy, Comedy, Horror, Romance,
+                            Thriller, Moral stories, and many more.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🔊
+                        </div>
+
+                        <h3>
+                            Read Aloud
+                        </h3>
+
+                        <p>
+
+                            Listen to stories using the browser's
+                            built-in voice reading technology.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🌙
+                        </div>
+
+                        <h3>
+                            Dark Mode
+                        </h3>
+
+                        <p>
+
+                            Choose a comfortable light or dark
+                            reading experience.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🔖
+                        </div>
+
+                        <h3>
+                            Bookmarks
+                        </h3>
+
+                        <p>
+
+                            Save stories and easily return to them
+                            whenever you want.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            ❤️
+                        </div>
+
+                        <h3>
+                            Favourite Stories
+                        </h3>
+
+                        <p>
+
+                            Keep the stories you love organized
+                            inside your profile.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🔤
+                        </div>
+
+                        <h3>
+                            Reading Preferences
+                        </h3>
+
+                        <p>
+
+                            Customize fonts and reading preferences
+                            for a more personal experience.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            👧🧑
+                        </div>
+
+                        <h3>
+                            Age-Based Stories
+                        </h3>
+
+                        <p>
+
+                            Discover collections designed for
+                            different age groups.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">
+                            🕒
+                        </div>
+
+                        <h3>
+                            Reading History
+                        </h3>
+
+                        <p>
+
+                            Keep track of the stories you have
+                            already explored.
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             TECHNOLOGY
+        ========================================== -->
+
+        <section class="about-section technology-section">
+
+            <div class="about-section-inner">
+
+                <div class="section-label">
+                    BEHIND THE EXPERIENCE
+                </div>
+
+
+                <h2>
+                    The Technology Behind Story Teller
+                </h2>
+
+
+                <p class="section-intro">
+
+                    A combination of modern web technologies brings
+                    the Story Teller experience to life.
+
+                </p>
+
+
+                <div class="technology-grid">
+
+
+                    <div class="technology-card">
+
+                        <div class="technology-icon">
+                            5️⃣
+                        </div>
+
+                        <h3>
+                            HTML5
+                        </h3>
+
+                        <p>
+                            Structure & Content
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="technology-card">
+
+                        <div class="technology-icon">
+                            🎨
+                        </div>
+
+                        <h3>
+                            CSS3
+                        </h3>
+
+                        <p>
+                            Design & Animation
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="technology-card">
+
+                        <div class="technology-icon">
+                            JS
+                        </div>
+
+                        <h3>
+                            JavaScript
+                        </h3>
+
+                        <p>
+                            Logic & Interactivity
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="technology-card">
+
+                        <div class="technology-icon">
+                            🔊
+                        </div>
+
+                        <h3>
+                            Web Speech API
+                        </h3>
+
+                        <p>
+                            Voice Reading
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="technology-card">
+
+                        <div class="technology-icon">
+                            💾
+                        </div>
+
+                        <h3>
+                            LocalStorage
+                        </h3>
+
+                        <p>
+                            Preferences & Data
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             CREATOR
+        ========================================== -->
+
+        <section class="about-section creator-section">
+
+            <div class="about-section-inner">
+
+                <div class="section-label">
+                    THE CREATOR
+                </div>
+
+
+                <h2>
+                    The Person Behind Story Teller
+                </h2>
+
+
+                <div class="creator-card">
+
+
+                    <div class="creator-avatar">
+                        👩‍💻
+                    </div>
+
+
+                    <h2>
+                        Hema Sirisha Kotla
+                    </h2>
+
+
+                    <div class="creator-role">
+                        Creator of Story Teller
+                    </div>
+
+
+                    <p>
+
+                        Story Teller was created with a love for
+                        storytelling, creativity, and technology.
+
+                        The idea is simple: bring the timeless joy
+                        of reading into a modern, interactive space
+                        where every reader can discover their next
+                        story.
+
+                    </p>
+
+
+                    <p class="creator-quote">
+
+                        “Every story has the power to inspire,
+                        entertain, and create a new world.”
+
+                    </p>
+
+
+                    <!-- Creation Details -->
+
+                    <div class="creation-details">
+
+
+                        <div class="creation-item">
+
+                            <span>
+                                Created
+                            </span>
+
+                            <strong>
+                                2026
+                            </strong>
+
+                        </div>
+
+
+                        <div class="creation-item">
+
+                            <span>
+                                Version
+                            </span>
+
+                            <strong>
+                                1.0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="creation-item">
+
+                            <span>
+                                Type
+                            </span>
+
+                            <strong>
+                                Web Application
+                            </strong>
+
+                        </div>
+
+
+                        <div class="creation-item">
+
+                            <span>
+                                Name
+                            </span>
+
+                            <strong>
+                                Story Teller
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             FINAL MESSAGE
+        ========================================== -->
+
+        <section class="about-final">
+
+            <h2>
+                Your Next Story Is Waiting.
+            </h2>
+
+
+            <p>
+
+                Choose a genre, turn the page,
+                and let your imagination take you somewhere new.
+
+            </p>
+
+
+            <a href="stories.html">
+                📚 Explore Stories
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Story Teller
+        </p>
+
+        <p>
+            Every Story Begins with a Single Click.
+        </p>
+
+        <p>
+            Created with ❤️ by Hema Sirisha Kotla
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         THEME + AUTH
+    ========================================== -->
+
+    <script src="../assets/js/app.js"></script>
+
+
+    <script>
+
+        /* =========================================
+           LOGIN / PROFILE
+        ========================================= */
+
+        const authButton =
+            document.getElementById("authButton");
+
+
+        const loggedIn =
+            localStorage.getItem("loggedIn");
+
+
+        if (loggedIn === "true") {
+
+            const userName =
+                localStorage.getItem("userName") ||
+                "Profile";
+
+
+            authButton.innerHTML =
+                `👤 ${userName}`;
+
+
+            authButton.href =
+                "profile.html";
+
+        }
+
+
+        /* =========================================
+           THEME BUTTON SAFETY
+        ========================================= */
+
+        const themeButton =
+            document.getElementById("theme-toggle");
+
+
+        if (themeButton) {
+
+            if (
+                localStorage.getItem("theme") === "dark"
+            ) {
+
+                document.body.classList.add("dark");
+
+                themeButton.innerHTML = "☀️";
+
+            }
+
+
+            themeButton.onclick = function () {
+
+                document.body.classList.toggle("dark");
+
+
+                if (
+                    document.body.classList.contains("dark")
+                ) {
+
+                    localStorage.setItem(
+                        "theme",
+                        "dark"
+                    );
+
+                    themeButton.innerHTML = "☀️";
+
+                } else {
+
+                    localStorage.setItem(
+                        "theme",
+                        "light"
+                    );
+
+                    themeButton.innerHTML = "🌙";
+
+                }
+
+            };
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

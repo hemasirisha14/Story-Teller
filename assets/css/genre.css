@@ -1,0 +1,1387 @@
+/* =====================================================
+                    STORY TELLER
+              PREMIUM GENRE PAGE
+===================================================== */
+
+
+/* =====================================================
+                    PAGE BASE
+===================================================== */
+
+body {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* =====================================================
+                PREMIUM BACKGROUND
+===================================================== */
+
+.genre-background {
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255,255,255,.22),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 85% 70%,
+            rgba(255,255,255,.15),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            135deg,
+            #6a11cb,
+            #b83280,
+            #ff4ecd,
+            #2575fc
+        );
+
+    background-size:400% 400%;
+
+    animation:
+        genreBackground 14s ease infinite;
+
+}
+
+
+@keyframes genreBackground {
+
+    0% {
+        background-position:0% 50%;
+    }
+
+    50% {
+        background-position:100% 50%;
+    }
+
+    100% {
+        background-position:0% 50%;
+    }
+
+}
+
+
+
+/* =====================================================
+                    BACKGROUND ORBS
+===================================================== */
+
+.genre-orb {
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(2px);
+
+    opacity:.35;
+
+    animation:
+        floatingOrb 9s ease-in-out infinite;
+
+}
+
+
+.orb-one {
+
+    width:280px;
+
+    height:280px;
+
+    background:
+        rgba(255,255,255,.18);
+
+    top:8%;
+
+    left:-80px;
+
+}
+
+
+.orb-two {
+
+    width:360px;
+
+    height:360px;
+
+    background:
+        rgba(255,214,79,.12);
+
+    right:-120px;
+
+    top:35%;
+
+    animation-delay:2s;
+
+}
+
+
+.orb-three {
+
+    width:220px;
+
+    height:220px;
+
+    background:
+        rgba(0,206,201,.16);
+
+    bottom:5%;
+
+    left:35%;
+
+    animation-delay:4s;
+
+}
+
+
+@keyframes floatingOrb {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-25px)
+            scale(1.08);
+
+    }
+
+}
+
+
+
+/* =====================================================
+                    BACKGROUND STARS
+===================================================== */
+
+.genre-star {
+
+    position:absolute;
+
+    color:rgba(255,255,255,.7);
+
+    font-size:24px;
+
+    animation:
+        twinkle 3s ease-in-out infinite;
+
+}
+
+
+.star-one {
+
+    top:18%;
+
+    left:10%;
+
+}
+
+
+.star-two {
+
+    top:30%;
+
+    right:12%;
+
+    animation-delay:1s;
+
+}
+
+
+.star-three {
+
+    bottom:22%;
+
+    left:8%;
+
+    animation-delay:2s;
+
+}
+
+
+.star-four {
+
+    bottom:15%;
+
+    right:8%;
+
+    animation-delay:1.5s;
+
+}
+
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+
+        opacity:.3;
+
+        transform:scale(.8);
+
+    }
+
+    50% {
+
+        opacity:1;
+
+        transform:scale(1.2);
+
+    }
+
+}
+
+
+
+/* =====================================================
+                    MAIN SECTION
+===================================================== */
+
+.story-library {
+
+    position:relative;
+
+    min-height:100vh;
+
+    padding:
+
+        145px
+        6%
+        90px;
+
+}
+
+
+
+/* =====================================================
+                    PAGE HEADER
+===================================================== */
+
+.story-library-header {
+
+    max-width:1000px;
+
+    margin:
+
+        0
+        auto
+        60px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+.collection-badge {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:
+        9px
+        18px;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.13);
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:25px;
+
+}
+
+
+.collection-badge span {
+
+    color:#FFD54F;
+
+}
+
+
+
+.genre-main-icon {
+
+    width:105px;
+
+    height:105px;
+
+    margin:
+        0
+        auto
+        22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:32px;
+
+    font-size:55px;
+
+    background:
+        rgba(255,255,255,.14);
+
+    border:
+        1px solid
+        rgba(255,255,255,.28);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.18);
+
+    animation:
+        iconFloat 4s ease-in-out infinite;
+
+}
+
+
+@keyframes iconFloat {
+
+    0%,
+    100% {
+
+        transform:translateY(0);
+
+    }
+
+    50% {
+
+        transform:translateY(-8px);
+
+    }
+
+}
+
+
+
+.story-library-header h1 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(42px,5vw,64px);
+
+    line-height:1.15;
+
+    margin-bottom:18px;
+
+    text-shadow:
+        0 5px 25px
+        rgba(0,0,0,.18);
+
+}
+
+
+.story-library-header p {
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:
+        rgba(255,255,255,.82);
+
+}
+
+
+.header-line {
+
+    width:70px;
+
+    height:4px;
+
+    border-radius:10px;
+
+    background:#FFD54F;
+
+    margin:
+        28px
+        auto
+        0;
+
+}
+
+
+
+/* =====================================================
+                    STORY GRID
+===================================================== */
+
+.story-grid {
+
+    width:100%;
+
+    max-width:1250px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:30px;
+
+}
+
+
+
+/* =====================================================
+                    STORY CARD
+===================================================== */
+
+.story-card {
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.13);
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,.18);
+
+    transition:
+
+        transform .4s ease,
+
+        box-shadow .4s ease,
+
+        border-color .4s ease;
+
+    animation:
+        cardAppear .7s ease both;
+
+    animation-delay:
+        var(--card-delay);
+
+}
+
+
+.story-card:hover {
+
+    transform:
+        translateY(-12px);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.30);
+
+    border-color:
+        rgba(255,255,255,.45);
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity:0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+
+/* =====================================================
+                    STORY VISUAL
+===================================================== */
+
+.story-visual {
+
+    position:relative;
+
+    height:205px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.18),
+            transparent 50%
+        ),
+
+        linear-gradient(
+            135deg,
+            rgba(108,92,231,.45),
+            rgba(0,206,201,.25)
+        );
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.18);
+
+}
+
+
+.story-icon {
+
+    position:relative;
+
+    z-index:2;
+
+    width:105px;
+
+    height:105px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:35px;
+
+    font-size:62px;
+
+    background:
+        rgba(255,255,255,.15);
+
+    border:
+        1px solid
+        rgba(255,255,255,.3);
+
+    backdrop-filter:blur(15px);
+
+    -webkit-backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.15);
+
+    transition:
+        transform .4s ease;
+
+}
+
+
+.story-card:hover .story-icon {
+
+    transform:
+        scale(1.1)
+        rotate(-4deg);
+
+}
+
+
+.visual-glow {
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.12);
+
+    filter:blur(35px);
+
+}
+
+
+.story-number {
+
+    position:absolute;
+
+    right:20px;
+
+    top:18px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    color:
+        rgba(255,255,255,.6);
+
+}
+
+
+
+/* =====================================================
+                STORY CARD CONTENT
+===================================================== */
+
+.story-card-content {
+
+    padding:27px;
+
+}
+
+
+.story-top {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+
+.story-label {
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    color:
+        rgba(255,255,255,.6);
+
+}
+
+
+.story-rating {
+
+    padding:
+        6px
+        10px;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+
+.story-card h2 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:25px;
+
+    line-height:1.35;
+
+    margin-bottom:15px;
+
+    color:white;
+
+}
+
+
+.story-genre {
+
+    display:inline-block;
+
+    padding:
+        7px
+        13px;
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:
+        rgba(255,255,255,.9);
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* =====================================================
+                    STORY INFO
+===================================================== */
+
+.story-info {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+
+.story-info span {
+
+    padding:
+        8px
+        11px;
+
+    border-radius:12px;
+
+    background:
+        rgba(0,0,0,.10);
+
+    font-size:12px;
+
+    color:
+        rgba(255,255,255,.78);
+
+}
+
+
+
+/* =====================================================
+                    READ BUTTON
+===================================================== */
+
+.story-read-btn {
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    text-decoration:none;
+
+    padding:
+        14px
+        18px;
+
+    border-radius:18px;
+
+    background:#FFD54F;
+
+    color:#241b00;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transition:
+
+        transform .3s ease,
+
+        background .3s ease,
+
+        box-shadow .3s ease;
+
+}
+
+
+.story-read-btn strong {
+
+    font-size:21px;
+
+    transition:
+        transform .3s ease;
+
+}
+
+
+.story-read-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.2);
+
+}
+
+
+.story-read-btn:hover strong {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+
+/* =====================================================
+                    EMPTY STATE
+===================================================== */
+
+.story-empty {
+
+    grid-column:
+        1 / -1;
+
+    max-width:600px;
+
+    margin:auto;
+
+    padding:60px 30px;
+
+    text-align:center;
+
+    color:white;
+
+    border-radius:30px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    backdrop-filter:blur(20px);
+
+}
+
+
+.empty-icon {
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+
+.story-empty h2 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:32px;
+
+    margin-bottom:12px;
+
+}
+
+
+.story-empty p {
+
+    opacity:.8;
+
+    margin-bottom:25px;
+
+}
+
+
+.back-to-stories {
+
+    display:inline-block;
+
+    padding:
+        12px
+        20px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    background:#FFD54F;
+
+    color:#222;
+
+    font-weight:700;
+
+}
+
+
+
+/* =====================================================
+                    FOOTER
+===================================================== */
+
+footer {
+
+    position:relative;
+
+    z-index:2;
+
+    padding:
+        45px
+        20px;
+
+    text-align:center;
+
+    background:
+        rgba(0,0,0,.18);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+.footer-logo {
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+}
+
+
+footer p {
+
+    opacity:.8;
+
+    margin-bottom:10px;
+
+}
+
+
+footer small {
+
+    opacity:.55;
+
+}
+
+
+
+/* =====================================================
+                    DARK MODE
+===================================================== */
+
+body.dark {
+
+    background:#080b18;
+
+}
+
+
+body.dark .genre-background {
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(99,102,241,.16),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(168,85,247,.14),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #020617,
+            #111827,
+            #1e1b4b,
+            #312e81
+        );
+
+    background-size:400% 400%;
+
+}
+
+
+body.dark .story-card {
+
+    background:
+        rgba(15,18,35,.82);
+
+    border-color:
+        rgba(255,255,255,.09);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,.35);
+
+}
+
+
+body.dark .story-card:hover {
+
+    border-color:
+        rgba(167,139,250,.35);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.5);
+
+}
+
+
+body.dark .story-visual {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(99,102,241,.18),
+            transparent 50%
+        ),
+
+        linear-gradient(
+            135deg,
+            rgba(79,70,229,.25),
+            rgba(14,116,144,.18)
+        );
+
+}
+
+
+body.dark .genre-main-icon {
+
+    background:
+        rgba(255,255,255,.07);
+
+    border-color:
+        rgba(255,255,255,.12);
+
+}
+
+
+body.dark .story-rating {
+
+    background:
+        rgba(255,255,255,.07);
+
+}
+
+
+body.dark .story-genre {
+
+    background:
+        rgba(255,255,255,.06);
+
+    border-color:
+        rgba(255,255,255,.08);
+
+}
+
+
+body.dark .story-info span {
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:
+        #aeb4c7;
+
+}
+
+
+body.dark .collection-badge {
+
+    background:
+        rgba(255,255,255,.06);
+
+    border-color:
+        rgba(255,255,255,.12);
+
+}
+
+
+body.dark footer {
+
+    background:#020617;
+
+}
+
+
+
+/* =====================================================
+                    TABLET
+===================================================== */
+
+@media(max-width:1050px) {
+
+
+    .story-grid {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+
+    .story-library {
+
+        padding-left:4%;
+
+        padding-right:4%;
+
+    }
+
+}
+
+
+
+/* =====================================================
+                    MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+
+    .story-library {
+
+        padding:
+            125px
+            20px
+            60px;
+
+    }
+
+
+    .story-library-header {
+
+        margin-bottom:40px;
+
+    }
+
+
+    .genre-main-icon {
+
+        width:85px;
+
+        height:85px;
+
+        font-size:45px;
+
+        border-radius:27px;
+
+    }
+
+
+    .story-library-header h1 {
+
+        font-size:40px;
+
+    }
+
+
+    .story-library-header p {
+
+        font-size:15px;
+
+    }
+
+
+    .story-grid {
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+    }
+
+
+    .story-visual {
+
+        height:185px;
+
+    }
+
+
+    .story-card-content {
+
+        padding:23px;
+
+    }
+
+
+    .story-card h2 {
+
+        font-size:23px;
+
+    }
+
+
+    .story-top {
+
+        align-items:flex-start;
+
+    }
+
+
+    .story-number {
+
+        right:15px;
+
+        top:15px;
+
+    }
+
+
+    footer {
+
+        padding:
+            35px
+            20px;
+
+    }
+
+}
+
+
+
+/* =====================================================
+                    SMALL MOBILE
+===================================================== */
+
+@media(max-width:420px) {
+
+
+    .story-library {
+
+        padding-left:15px;
+
+        padding-right:15px;
+
+    }
+
+
+    .collection-badge {
+
+        font-size:10px;
+
+        letter-spacing:1.3px;
+
+    }
+
+
+    .story-library-header h1 {
+
+        font-size:34px;
+
+    }
+
+
+    .story-card-content {
+
+        padding:20px;
+
+    }
+
+
+    .story-info {
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}

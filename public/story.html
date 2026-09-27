@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Story | Story Teller</title>
+
+
+<!-- ================= GOOGLE FONTS ================= -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cinzel:wght@400;500;600;700&family=Comic+Neue:wght@400;700&family=Merriweather:wght@400;700&family=Nunito:wght@400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet">
+
+
+<!-- ================= CSS ================= -->
+
+<link rel="stylesheet"
+      href="../assets/css/style.css">
+
+<link rel="stylesheet"
+      href="../assets/css/story.css">
+
+<link rel="stylesheet"
+      href="../assets/css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        📖 Story Teller
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="stories.html">
+            Stories
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+    </div>
+
+
+    <div class="nav-right">
+
+        <button
+            id="theme-toggle"
+            class="theme-btn">
+
+            🌙
+
+        </button>
+
+
+        <a
+            href="login.html"
+            class="login-btn">
+
+            Login
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= STORY PAGE ================= -->
+
+<section class="story-page">
+
+<div class="story-card">
+
+
+<!-- ================= BACK BUTTON ================= -->
+
+<a
+    href="stories.html"
+    class="back">
+
+    ← Back to Stories
+
+</a>
+
+
+
+<!-- ================= STORY TITLE ================= -->
+
+<h1 id="storyTitle">
+
+    Loading Story...
+
+</h1>
+
+
+
+<!-- ================= STORY DETAILS ================= -->
+
+<div class="story-details">
+
+    <span>
+        ⭐
+    </span>
+
+    <span>
+        📖 Loading...
+    </span>
+
+    <span>
+        Story
+    </span>
+
+</div>
+
+
+
+<!-- ================= STORY CONTENT ================= -->
+
+<div
+    class="story-content"
+    id="storyContent">
+
+</div>
+
+
+
+<!-- ================= PAGE NAVIGATION ================= -->
+
+<div class="page-controls">
+
+
+    <button id="prevPage">
+
+        ⬅ Previous
+
+    </button>
+
+
+    <span id="pageNumber">
+
+        Page 1 / 4
+
+    </span>
+
+
+    <button id="nextPage">
+
+        Next ➡
+
+    </button>
+
+
+</div>
+
+
+
+<!-- ================= READING TOOLS ================= -->
+
+<div class="reading-tools">
+
+
+    <button id="listenBtn">
+
+        🔊 Listen
+
+    </button>
+
+
+    <button id="pauseBtn">
+
+        ⏸ Pause
+
+    </button>
+
+
+    <button id="resumeBtn">
+
+        ▶ Resume
+
+    </button>
+
+
+    <button id="stopBtn">
+
+        ⏹ Stop
+
+    </button>
+
+
+    <button id="bookmarkBtn">
+
+        🔖 Bookmark
+
+    </button>
+
+
+    <button id="favoriteBtn">
+
+        ❤️ Favorite
+
+    </button>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+
+        © 2026 Story Teller
+
+        <br>
+
+        Every Story Begins with a Single Click.
+
+    </p>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+
+<!-- STORY DATA -->
+
+<script src="../assets/js/storyData.js"></script>
+
+
+<!-- LANGUAGE SYSTEM -->
+
+<script src="../assets/js/language.js"></script>
+
+
+<!-- STORY SYSTEM -->
+
+<script src="../assets/js/stories.js"></script>
+
+
+<!-- APP -->
+
+<script src="../assets/js/app.js"></script>
+
+
+<!-- THEME -->
+
+<script src="../assets/js/theme.js"></script>
+
+
+<!-- READ ALOUD -->
+
+<script src="../assets/js/audio.js"></script>
+
+
+<!-- BOOKMARK -->
+
+<script src="../assets/js/bookmark.js"></script>
+
+
+<!-- FAVORITE -->
+
+<script src="../assets/js/favorite.js"></script>
+
+
+
+<!-- ================= READING HISTORY ================= -->
+
+<script>
+
+const storyTitleElement =
+    document.getElementById("storyTitle");
+
+
+if(storyTitleElement){
+
+    const storyName =
+        storyTitleElement.innerText;
+
+
+    const userEmail =
+        localStorage.getItem("userEmail");
+
+
+    if(
+        userEmail &&
+        storyName &&
+        storyName !== "Loading Story..."
+    ){
+
+
+        /* ===============================
+                STORIES READ
+        ================================ */
+
+
+        const storiesReadKey =
+            "storiesRead_" + userEmail;
+
+
+        let readStories =
+            JSON.parse(
+                localStorage.getItem(storiesReadKey)
+            ) || [];
+
+
+        if(!readStories.includes(storyName)){
+
+
+            readStories.push(storyName);
+
+
+            localStorage.setItem(
+                storiesReadKey,
+                JSON.stringify(readStories)
+            );
+
+
+        }
+
+
+
+        /* ===============================
+                READING HISTORY
+        ================================ */
+
+
+        const historyKey =
+            "readingHistory_" + userEmail;
+
+
+        let readingHistory =
+            JSON.parse(
+                localStorage.getItem(historyKey)
+            ) || [];
+
+
+        if(!readingHistory.includes(storyName)){
+
+
+            readingHistory.push(storyName);
+
+
+            localStorage.setItem(
+                historyKey,
+                JSON.stringify(readingHistory)
+            );
+
+
+        }
+
+    }
+
+}
+
+</script>
+
+
+
+<!-- ================= FONT PREFERENCE ================= -->
+
+<script>
+
+const savedFont =
+    localStorage.getItem("readingFont");
+
+
+const storyContentElement =
+    document.getElementById("storyContent");
+
+
+if(savedFont && storyContentElement){
+
+
+    const fontMap = {
+
+
+        poppins:
+            '"Poppins", sans-serif',
+
+
+        merriweather:
+            '"Merriweather", serif',
+
+
+        playfair:
+            '"Playfair Display", serif',
+
+
+        nunito:
+            '"Nunito", sans-serif',
+
+
+        comic:
+            '"Comic Neue", cursive',
+
+
+        caveat:
+            '"Caveat", cursive',
+
+
+        cinzel:
+            '"Cinzel", serif',
+
+
+        roboto:
+            '"Roboto", sans-serif'
+
+
+    };
+
+
+    const selectedFont =
+        fontMap[savedFont];
+
+
+    if(selectedFont){
+
+
+        storyContentElement.style.setProperty(
+            "font-family",
+            selectedFont,
+            "important"
+        );
+
+
+        const storyElements =
+            storyContentElement.querySelectorAll("*");
+
+
+        storyElements.forEach(element => {
+
+
+            element.style.setProperty(
+                "font-family",
+                selectedFont,
+                "important"
+            );
+
+
+        });
+
+
+    }
+
+}
+
+</script>
+
+
+
+<!-- ================= LOGIN CHECK ================= -->
+
+<script>
+
+const loginBtn =
+    document.querySelector(".login-btn");
+
+
+if(
+    localStorage.getItem("loggedIn") === "true"
+){
+
+
+    loginBtn.innerHTML =
+        "Profile";
+
+
+    loginBtn.href =
+        "profile.html";
+
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

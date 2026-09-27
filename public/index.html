@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Story Teller | Every Story Begins with a Single Click</title>
+
+
+    <!-- ================= GOOGLE FONTS ================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ================= CSS ================= -->
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/home.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../assets/css/responsive.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+                            NAVBAR
+    ===================================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+
+            <div class="logo">
+
+                📖 Story Teller
+
+            </div>
+
+
+            <ul class="nav-links">
+
+
+                <li>
+
+                    <a
+                        href="index.html"
+                        class="active"
+                        data-i18n="home"
+                    >
+                        Home
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="stories.html"
+                        data-i18n="stories"
+                    >
+                        Stories
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="about.html"
+                        data-i18n="about"
+                    >
+                        About
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+
+            <div class="nav-right">
+
+
+                <button
+                    id="theme-toggle"
+                    class="theme-btn"
+                    aria-label="Toggle dark mode"
+                >
+                    🌙
+                </button>
+
+
+                <a
+                    href="login.html"
+                    class="login-btn"
+                    data-i18n="login"
+                >
+                    Login
+                </a>
+
+
+            </div>
+
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+                         HERO SECTION
+    ===================================================== -->
+
+    <main>
+
+
+        <section class="hero">
+
+
+            <!-- Animated Background -->
+
+            <div class="gradient-bg"></div>
+
+
+            <!-- Decorative Glow -->
+
+            <div class="hero-glow hero-glow-one"></div>
+
+            <div class="hero-glow hero-glow-two"></div>
+
+
+            <!-- Floating Circles -->
+
+            <span class="circle circle1"></span>
+
+            <span class="circle circle2"></span>
+
+            <span class="circle circle3"></span>
+
+            <span class="circle circle4"></span>
+
+
+            <!-- Floating Stars -->
+
+            <span class="star star1">✦</span>
+
+            <span class="star star2">✦</span>
+
+            <span class="star star3">✦</span>
+
+            <span class="star star4">✦</span>
+
+            <span class="star star5">✦</span>
+
+
+
+            <!-- =================================================
+                            HERO CONTENT
+            ================================================= -->
+
+            <div class="hero-content">
+
+
+                <!-- Small Badge -->
+
+                <div class="hero-badge">
+
+                    <span class="badge-icon">
+                        ✨
+                    </span>
+
+                    <span data-i18n="awaits">
+                        A world of stories awaits
+                    </span>
+
+                </div>
+
+
+
+                <!-- Main Heading -->
+
+                <h1>
+
+                    <span data-i18n="storyBegins">
+                        Every Story Begins
+                    </span>
+
+                    <span data-i18n="singleClick">
+                        with a Single Click.
+                    </span>
+
+                </h1>
+
+
+
+                <!-- Description -->
+
+                <p class="hero-description"
+                   data-i18n="heroDescription">
+
+                    Step into a world of imagination where
+                    every story takes you somewhere new.
+
+                    Discover adventures, mysteries,
+                    laughter, emotions and unforgettable
+                    characters — all in one place.
+
+                </p>
+
+
+
+                <!-- Explore Button -->
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="stories.html"
+                        class="btn-primary hero-main-btn"
+                    >
+
+                        <span data-i18n="exploreGenres">
+                            Explore Genres
+                        </span>
+
+                        <span class="arrow">
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+
+                <!-- Trust / Feature Row -->
+
+                <div class="hero-features">
+
+
+                    <div class="hero-feature">
+
+                        <span class="feature-icon">
+                            📚
+                        </span>
+
+                        <div>
+
+                            <strong data-i18n="multipleGenres">
+                                Multiple Genres
+                            </strong>
+
+                            <small data-i18n="storiesEveryMood">
+                                Stories for every mood
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="hero-feature">
+
+                        <span class="feature-icon">
+                            🎧
+                        </span>
+
+                        <div>
+
+                            <strong data-i18n="readAloud">
+                                Read Aloud
+                            </strong>
+
+                            <small data-i18n="listenStories">
+                                Listen to your stories
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="hero-feature">
+
+                        <span class="feature-icon">
+                            🌙
+                        </span>
+
+                        <div>
+
+                            <strong data-i18n="yourExperience">
+                                Your Experience
+                            </strong>
+
+                            <small data-i18n="personalizeReading">
+                                Personalize your reading
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================================
+                         DISCOVER SECTION
+        ===================================================== -->
+
+        <section class="discover-section">
+
+
+            <div class="discover-container">
+
+
+                <div class="section-heading">
+
+
+                    <span class="section-label">
+                        ✦ DISCOVER
+                    </span>
+
+
+                    <h2 data-i18n="storiesEveryReader">
+                        Stories for Every Kind of Reader
+                    </h2>
+
+
+                    <p data-i18n="readerDescription">
+
+                        Whether you want to laugh, feel,
+                        explore or be surprised,
+                        there is a story waiting for you.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="discover-grid">
+
+
+                    <div class="discover-card">
+
+
+                        <div class="discover-icon">
+                            🪄
+                        </div>
+
+
+                        <h3 data-i18n="imagine">
+                            Imagine
+                        </h3>
+
+
+                        <p data-i18n="imagineDescription">
+
+                            Escape into magical worlds,
+                            fantasy adventures and
+                            extraordinary possibilities.
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="discover-card">
+
+
+                        <div class="discover-icon">
+                            🔍
+                        </div>
+
+
+                        <h3 data-i18n="explore">
+                            Explore
+                        </h3>
+
+
+                        <p data-i18n="exploreDescription">
+
+                            Follow mysteries, thrilling
+                            journeys and stories that
+                            keep you turning the page.
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="discover-card">
+
+
+                        <div class="discover-icon">
+                            💛
+                        </div>
+
+
+                        <h3 data-i18n="feel">
+                            Feel
+                        </h3>
+
+
+                        <p data-i18n="feelDescription">
+
+                            Experience meaningful stories,
+                            life lessons and unforgettable
+                            emotional moments.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+                            FOOTER
+    ===================================================== -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Story Teller.
+
+            <span data-i18n="tagline">
+                Every Story Begins with a Single Click.
+            </span>
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+                            APP JS
+    ===================================================== -->
+
+    <script src="../assets/js/app.js"></script>
+
+
+    <!-- =====================================================
+                       LANGUAGE SYSTEM
+    ===================================================== -->
+
+    <script src="../assets/js/language.js"></script>
+
+
+
+    <!-- =====================================================
+                         LOGIN CHECK
+    ===================================================== -->
+
+    <script>
+
+        const loginBtn =
+            document.querySelector(".login-btn");
+
+
+        if (
+            localStorage.getItem("loggedIn")
+            === "true"
+        ) {
+
+            loginBtn.innerHTML =
+                "Profile";
+
+            loginBtn.href =
+                "profile.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

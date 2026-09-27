@@ -1,0 +1,638 @@
+/* =====================================
+        STORY TELLER GLOBAL STYLE
+===================================== */
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+
+
+body{
+
+
+    min-height:100vh;
+
+    color:white;
+
+    overflow-x:hidden;
+
+
+    background:linear-gradient(
+        -45deg,
+        #6a11cb,
+        #b83280,
+        #ff4ecd,
+        #2575fc
+    );
+
+
+    background-size:400% 400%;
+
+    animation:colorChange 12s ease infinite;
+
+
+}
+
+
+
+
+
+
+
+/* MOVING BACKGROUND COLORS */
+
+
+@keyframes colorChange{
+
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+              NAVBAR
+===================================== */
+
+
+
+.navbar{
+
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+
+    padding:18px 70px;
+
+
+
+    background:rgba(255,255,255,.12);
+
+
+    backdrop-filter:blur(20px);
+
+
+
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+
+}
+
+
+
+
+
+
+.logo{
+
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+.nav-links{
+
+
+    display:flex;
+
+    gap:35px;
+
+
+}
+
+
+
+
+
+.nav-links a{
+
+
+    color:white;
+
+
+    text-decoration:none;
+
+
+    font-size:17px;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+.nav-links a:hover{
+
+
+    color:#FFD54F;
+
+
+}
+
+
+
+
+
+
+
+.nav-right{
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+
+}
+
+
+
+
+
+
+.login-btn{
+
+
+    text-decoration:none;
+
+
+    background:#FFD54F;
+
+
+    color:#333;
+
+
+    padding:12px 28px;
+
+
+    border-radius:30px;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.login-btn:hover{
+
+
+    transform:translateY(-3px);
+
+
+    background:white;
+
+
+}
+
+
+
+
+
+
+
+.theme-btn{
+
+
+    width:45px;
+
+    height:45px;
+
+
+    border-radius:50%;
+
+
+    border:none;
+
+
+    cursor:pointer;
+
+
+    font-size:20px;
+
+
+    background:white;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.theme-btn:hover{
+
+
+    transform:rotate(20deg);
+
+
+}
+
+
+
+
+
+
+
+
+/* =====================================
+              BUTTONS
+===================================== */
+
+
+
+.btn-primary,
+
+
+.btn-secondary{
+
+
+    display:inline-block;
+
+
+    padding:15px 35px;
+
+
+    border-radius:35px;
+
+
+    text-decoration:none;
+
+
+    margin:10px;
+
+
+    font-weight:600;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.btn-primary{
+
+
+    background:#FFD54F;
+
+
+    color:#333;
+
+
+}
+
+
+
+.btn-secondary{
+
+
+    border:2px solid white;
+
+
+    color:white;
+
+
+}
+
+
+
+.btn-primary:hover,
+
+
+.btn-secondary:hover{
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+
+
+
+/* =====================================
+              DARK MODE
+===================================== */
+
+
+
+body.dark{
+
+
+    background:
+
+    linear-gradient(
+    120deg,
+    #050505,
+    #17102b,
+    #24103d
+    );
+
+
+    animation:none;
+
+
+}
+
+
+
+
+body.dark .navbar{
+
+
+    background:rgba(0,0,0,.5);
+
+
+}
+
+
+
+body.dark .theme-btn{
+
+
+    background:#333;
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+/* =====================================
+              FOOTER
+===================================== */
+
+
+
+footer{
+
+
+    background:rgba(0,0,0,.2);
+
+
+    padding:30px;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+
+
+/* LOADING EFFECT */
+
+
+body.loaded{
+
+
+    animation:none;
+
+
+}
+/* =====================================
+      STORY TELLER DARK MODE FIX
+===================================== */
+
+/* DARK MODE BODY */
+
+body.dark{
+
+    background:#080b18 !important;
+    color:white;
+
+}
+
+
+/* HOME BACKGROUND */
+
+body.dark .gradient-bg{
+
+    background:
+    linear-gradient(
+        -45deg,
+        #020617,
+        #111827,
+        #1e1b4b,
+        #312e81
+    ) !important;
+
+    background-size:400% 400%;
+
+}
+
+
+/* NAVBAR */
+
+body.dark .navbar{
+
+    background:rgba(0,0,0,0.45);
+
+}
+
+
+/* LOGO */
+
+body.dark .logo{
+
+    color:white;
+
+}
+
+
+/* NAV LINKS */
+
+body.dark .nav-links a{
+
+    color:#e5e7eb;
+
+}
+
+body.dark .nav-links a:hover,
+body.dark .nav-links a.active{
+
+    color:#FFD54F;
+
+}
+
+
+/* HERO GLASS CARD */
+
+body.dark .hero-card{
+
+    background:rgba(0,0,0,0.45);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+}
+
+
+/* HERO TEXT */
+
+body.dark .hero-card h1{
+
+    color:white;
+
+}
+
+body.dark .hero-card h2{
+
+    color:#FFD54F;
+
+}
+
+body.dark .hero-card p{
+
+    color:#e5e7eb;
+
+}
+
+
+/* EXPLORE BUTTON */
+
+body.dark .btn-primary{
+
+    background:#FFD54F;
+
+    color:#111;
+
+}
+
+
+/* SECOND BUTTON */
+
+body.dark .btn-secondary{
+
+    color:white;
+
+    border-color:white;
+
+}
+
+
+/* GENRE CARDS */
+
+body.dark .genre-card{
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+}
+
+
+body.dark .genre-card:hover{
+
+    background:rgba(255,255,255,0.15);
+
+}
+
+
+/* FOOTER */
+
+body.dark footer{
+
+    background:#020617;
+
+    color:#ddd;
+
+}
+
+
+/* DARK MODE ICON BUTTON */
+
+body.dark .theme-btn{
+
+    background:#111827;
+
+    color:white;
+
+}

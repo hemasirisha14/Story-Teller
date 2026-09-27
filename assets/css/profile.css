@@ -1,0 +1,616 @@
+/* =========================================
+        STORY TELLER — PREMIUM PROFILE
+========================================= */
+
+.profile-page{
+    min-height:100vh;
+    padding-top:125px;
+    padding-bottom:80px;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* =========================================
+        PROFILE HERO
+========================================= */
+
+.profile-card{
+    position:relative;
+    max-width:1050px;
+    margin:auto;
+    padding:55px 45px;
+    text-align:center;
+    border-radius:35px;
+    background:rgba(255,255,255,.13);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 25px 70px rgba(0,0,0,.30);
+    overflow:hidden;
+    animation:profileShow .9s ease;
+}
+
+.profile-card::before{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:rgba(255,213,79,.15);
+    top:-100px;
+    right:-70px;
+    filter:blur(5px);
+}
+
+.profile-card::after{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:rgba(108,99,255,.18);
+    bottom:-90px;
+    left:-60px;
+}
+
+.profile-image{
+    position:relative;
+    z-index:2;
+    width:125px;
+    height:125px;
+    margin:0 auto 25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:rgba(255,255,255,.95);
+    font-size:60px;
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25),
+        0 0 0 8px rgba(255,255,255,.12);
+}
+
+.profile-card h1{
+    position:relative;
+    z-index:2;
+    color:#FFD54F;
+    font-size:46px;
+    margin-bottom:10px;
+}
+
+.profile-card > p{
+    position:relative;
+    z-index:2;
+    color:#f5f5f5;
+    font-size:18px;
+    margin-bottom:18px;
+}
+
+.reader-badge{
+    position:relative;
+    z-index:2;
+    display:inline-block;
+    padding:9px 20px;
+    border-radius:30px;
+    background:rgba(255,213,79,.18);
+    border:1px solid rgba(255,213,79,.4);
+    color:#FFD54F;
+    font-size:14px;
+    font-weight:600;
+}
+
+/* =========================================
+        STATISTICS
+========================================= */
+
+.stats{
+    position:relative;
+    z-index:3;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    margin-top:40px;
+}
+
+.stats div{
+    padding:28px 15px;
+    border-radius:24px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.15);
+    transition:.35s ease;
+}
+
+.stats div:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,.20);
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.stats h2{
+    color:#FFD54F;
+    font-size:38px;
+    margin-bottom:5px;
+}
+
+.stats p{
+    color:white;
+    font-size:14px;
+    margin:0;
+}
+
+/* =========================================
+        PROFILE SECTIONS
+========================================= */
+
+.profile-section{
+    margin-top:65px;
+}
+
+.profile-section h2{
+    color:#FFD54F;
+    text-align:center;
+    font-size:34px;
+    margin-bottom:30px;
+}
+
+/* =========================================
+        READING JOURNEY
+========================================= */
+
+.journey-box{
+    max-width:900px;
+    margin:auto;
+    padding:35px;
+    border-radius:28px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    box-shadow:0 15px 45px rgba(0,0,0,.18);
+}
+
+.journey-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+    color:white;
+}
+
+.journey-top strong{
+    color:#FFD54F;
+}
+
+.journey-progress{
+    width:100%;
+    height:15px;
+    background:rgba(255,255,255,.18);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.journey-progress-bar{
+    width:0%;
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(90deg,#FFD54F,#ff9f43);
+    transition:width .8s ease;
+}
+
+.journey-message{
+    margin-top:18px;
+    text-align:center;
+    color:#eee;
+}
+
+/* =========================================
+        CONTINUE READING
+========================================= */
+
+.continue-card{
+    max-width:900px;
+    margin:auto;
+    padding:35px;
+    border-radius:28px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    transition:.35s ease;
+}
+
+.continue-card:hover{
+    transform:translateY(-6px);
+    background:rgba(255,255,255,.18);
+}
+
+.continue-info{
+    text-align:left;
+}
+
+.continue-icon{
+    font-size:55px;
+}
+
+.continue-info h3{
+    color:#FFD54F;
+    font-size:25px;
+    margin-bottom:8px;
+}
+
+.continue-info p{
+    color:#eee;
+    margin-bottom:15px;
+}
+
+.continue-btn{
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:30px;
+    background:#FFD54F;
+    color:#333;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.continue-btn:hover{
+    transform:translateY(-3px);
+    background:white;
+}
+
+/* =========================================
+        STORY GRID
+========================================= */
+
+.story-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.profile-story{
+    text-align:center;
+    padding:32px 22px;
+    border-radius:25px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    transition:.35s ease;
+}
+
+.profile-story:hover{
+    transform:translateY(-8px);
+    background:rgba(255,255,255,.19);
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.story-icon{
+    font-size:45px;
+    margin-bottom:10px;
+}
+
+.profile-story h3{
+    font-size:20px;
+    margin:10px 0 18px;
+    color:white;
+}
+
+.profile-story button{
+    padding:11px 22px;
+    border:none;
+    border-radius:30px;
+    background:#FFD54F;
+    color:#333;
+    cursor:pointer;
+    font-weight:600;
+    transition:.3s;
+}
+
+.profile-story button:hover{
+    transform:translateY(-3px);
+    background:white;
+}
+
+/* Dynamic bookmark container */
+#bookmarkContainer{
+    display:contents;
+}
+
+/* =========================================
+        EMPTY STATE
+========================================= */
+
+.empty-state{
+    grid-column:1/-1;
+    padding:45px 20px;
+    text-align:center;
+    border-radius:25px;
+    background:rgba(255,255,255,.08);
+    border:1px dashed rgba(255,255,255,.25);
+    color:#eee;
+}
+
+.empty-state .empty-icon{
+    font-size:50px;
+    margin-bottom:12px;
+}
+
+.empty-state h3{
+    color:#FFD54F;
+    margin-bottom:8px;
+}
+
+/* =========================================
+        ACHIEVEMENTS
+========================================= */
+
+.achievement-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.achievement{
+    position:relative;
+    padding:32px 20px;
+    text-align:center;
+    border-radius:25px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    transition:.35s ease;
+}
+
+.achievement:hover{
+    transform:translateY(-7px);
+}
+
+.achievement-icon{
+    font-size:45px;
+}
+
+.achievement h3{
+    color:#FFD54F;
+    margin:14px 0 8px;
+}
+
+.achievement p{
+    color:#eee;
+    font-size:14px;
+}
+
+.achievement.locked{
+    opacity:.55;
+    filter:grayscale(.4);
+}
+
+.achievement-progress{
+    margin-top:15px;
+    height:8px;
+    background:rgba(255,255,255,.15);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.achievement-progress span{
+    display:block;
+    height:100%;
+    width:0%;
+    background:#FFD54F;
+    border-radius:20px;
+}
+
+/* =========================================
+        RECENT HISTORY
+========================================= */
+
+.history-section{
+    width:90%;
+    max-width:1200px;
+    margin:0 auto 70px;
+}
+
+.history-section h2{
+    color:#FFD54F;
+    text-align:center;
+    font-size:34px;
+    margin-bottom:30px;
+}
+
+#readingHistory{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.history-card{
+    padding:22px;
+    border-radius:20px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    text-align:center;
+    transition:.3s;
+}
+
+.history-card:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,.18);
+}
+
+/* =========================================
+        PREFERENCES
+========================================= */
+
+.preference-box{
+    max-width:900px;
+    margin:auto;
+    padding:15px 30px;
+    border-radius:28px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+}
+
+.preference-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 5px;
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.preference-row:last-child{
+    border-bottom:none;
+}
+
+.preference-label{
+    text-align:left;
+}
+
+.preference-label span{
+    display:block;
+    color:#aaa;
+    font-size:13px;
+    margin-top:3px;
+}
+
+.preference-value{
+    color:#FFD54F;
+    font-weight:600;
+    text-align:right;
+}
+
+.settings-btn{
+    display:block;
+    width:max-content;
+    margin:25px auto 5px;
+    padding:12px 28px;
+    border-radius:30px;
+    background:#FFD54F;
+    color:#333;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.settings-btn:hover{
+    transform:translateY(-4px);
+    background:white;
+}
+
+/* =========================================
+        DARK MODE
+========================================= */
+
+body.dark .profile-card,
+body.dark .stats div,
+body.dark .journey-box,
+body.dark .continue-card,
+body.dark .profile-story,
+body.dark .achievement,
+body.dark .history-card,
+body.dark .preference-box{
+    background:rgba(10,10,25,.82);
+    border-color:rgba(255,255,255,.12);
+}
+
+body.dark .journey-progress{
+    background:rgba(255,255,255,.10);
+}
+
+body.dark .empty-state{
+    background:rgba(255,255,255,.04);
+}
+
+/* =========================================
+        ANIMATION
+========================================= */
+
+@keyframes profileShow{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================================
+        MOBILE
+========================================= */
+
+@media(max-width:900px){
+
+    .profile-page{
+        width:92%;
+    }
+
+    .profile-card{
+        padding:40px 22px;
+    }
+
+    .profile-card h1{
+        font-size:34px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .stats div{
+        width:100%;
+    }
+
+    .story-grid,
+    .achievement-container,
+    #readingHistory{
+        grid-template-columns:1fr;
+    }
+
+    .continue-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .continue-info{
+        text-align:center;
+    }
+
+    .journey-box,
+    .preference-box{
+        padding:25px 20px;
+    }
+
+    .journey-top{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .preference-row{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+    }
+
+    .preference-label,
+    .preference-value{
+        text-align:center;
+    }
+
+    .history-section{
+        width:92%;
+    }
+}

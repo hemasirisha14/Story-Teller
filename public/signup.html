@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Signup | Story Teller</title>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<link rel="stylesheet" href="../assets/css/auth.css">
+
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+
+<div class="logo">
+
+📖 Story Teller
+
+</div>
+
+
+
+<ul class="nav-links">
+
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+
+<li>
+<a href="stories.html">
+Stories
+</a>
+</li>
+
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+
+</ul>
+
+
+
+<div class="nav-right">
+
+
+<button id="theme-toggle" class="theme-btn">
+
+🌙
+
+</button>
+
+
+</div>
+
+
+</nav>
+
+</header>
+
+
+
+
+
+<section class="auth-page">
+
+
+<div class="auth-box">
+
+
+<h1>
+
+Create Account
+
+</h1>
+
+
+<p>
+
+Join the Story Teller family ✨
+
+</p>
+
+
+
+
+
+<form id="signupForm">
+
+
+
+<div class="input-group">
+
+
+<label>
+
+Full Name
+
+</label>
+
+
+<input
+type="text"
+placeholder="Enter your name"
+required>
+
+
+</div>
+
+
+
+
+
+<div class="input-group">
+
+
+<label>
+
+Email
+
+</label>
+
+
+<input
+type="email"
+placeholder="Enter your email"
+required>
+
+
+</div>
+
+
+
+
+
+<div class="input-group">
+
+
+<label>
+
+Password
+
+</label>
+
+
+<input
+type="password"
+placeholder="Create password"
+required>
+
+
+</div>
+
+
+
+
+
+<div class="input-group">
+
+
+<label>
+
+Confirm Password
+
+</label>
+
+
+<input
+type="password"
+placeholder="Confirm password"
+required>
+
+
+</div>
+
+
+
+
+
+<div class="input-group">
+
+
+<label>
+
+Age Group
+
+</label>
+
+
+<select>
+
+
+<option>
+
+Select Age
+
+</option>
+
+
+<option>
+
+Kids
+
+</option>
+
+
+<option>
+
+Teen
+
+</option>
+
+
+<option>
+
+Adult
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="input-group">
+
+
+<label>
+
+Favourite Genre
+
+</label>
+
+
+<select>
+
+
+<option>
+
+Choose Genre
+
+</option>
+
+
+<option>
+
+Fantasy 🧚
+
+</option>
+
+
+<option>
+
+Comedy 😂
+
+</option>
+
+
+<option>
+
+Horror 👻
+
+</option>
+
+
+<option>
+
+Thriller 🔍
+
+</option>
+
+
+<option>
+
+Romance ❤️
+
+</option>
+
+
+<option>
+
+Moral 📚
+
+</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<button class="auth-btn">
+
+Create Account
+
+</button>
+
+
+
+
+
+</form>
+
+
+
+
+
+<p class="switch">
+
+
+Already have an account?
+
+
+<a href="login.html">
+
+Login
+
+</a>
+
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 Story Teller | Every Story Begins with a Single Click.
+
+</p>
+
+</footer>
+
+
+
+
+
+
+
+<script>
+
+
+// DARK MODE
+
+
+const themeBtn=document.getElementById("theme-toggle");
+
+
+
+if(localStorage.getItem("theme")==="dark"){
+
+
+document.body.classList.add("dark");
+
+themeBtn.innerHTML="☀️";
+
+
+}
+
+
+
+themeBtn.onclick=function(){
+
+
+document.body.classList.toggle("dark");
+
+
+
+if(document.body.classList.contains("dark")){
+
+
+localStorage.setItem("theme","dark");
+
+themeBtn.innerHTML="☀️";
+
+
+}
+
+else{
+
+
+localStorage.setItem("theme","light");
+
+themeBtn.innerHTML="🌙";
+
+
+}
+
+
+};
+
+
+
+
+
+// SIGNUP SYSTEM
+
+
+document.getElementById("signupForm").onsubmit=function(e){
+
+
+e.preventDefault();
+
+
+
+/* ===============================
+        GET USER DETAILS
+================================== */
+
+
+const name =
+document.querySelector('input[type="text"]').value.trim();
+
+
+const email =
+document.querySelector('input[type="email"]').value.trim().toLowerCase();
+
+
+const passwordInputs =
+document.querySelectorAll('input[type="password"]');
+
+
+const password =
+passwordInputs[0].value;
+
+
+const confirmPassword =
+passwordInputs[1].value;
+
+
+const ageGroup =
+document.querySelectorAll("select")[0].value;
+
+
+const favouriteGenre =
+document.querySelectorAll("select")[1].value;
+
+
+
+
+
+/* ===============================
+        CHECK PASSWORD
+================================== */
+
+
+if(password !== confirmPassword){
+
+
+alert("Passwords do not match!");
+
+
+return;
+
+
+}
+
+
+
+
+
+/* ===============================
+        GET EXISTING USERS
+================================== */
+
+
+let users =
+JSON.parse(
+localStorage.getItem("users")
+) || [];
+
+
+
+
+
+/* ===============================
+        CHECK EXISTING EMAIL
+================================== */
+
+
+const existingUser =
+users.find(
+user => user.email === email
+);
+
+
+if(existingUser){
+
+
+alert(
+"This email is already registered. Please login."
+);
+
+
+return;
+
+
+}
+
+
+
+
+
+/* ===============================
+        CREATE NEW USER
+================================== */
+
+
+const newUser = {
+
+
+name: name,
+
+email: email,
+
+password: password,
+
+ageGroup: ageGroup,
+
+favouriteGenre: favouriteGenre
+
+
+};
+
+
+
+
+
+/* ===============================
+        SAVE USER
+================================== */
+
+
+users.push(newUser);
+
+
+localStorage.setItem(
+"users",
+JSON.stringify(users)
+);
+
+
+
+
+
+/* ===============================
+        SET CURRENT USER
+================================== */
+
+
+localStorage.setItem(
+"userName",
+name
+);
+
+
+localStorage.setItem(
+"userEmail",
+email
+);
+
+
+localStorage.setItem(
+"loggedIn",
+"true"
+);
+
+
+
+
+
+/* ===============================
+        SUCCESS MESSAGE
+================================== */
+
+
+alert(
+"Account created successfully! Welcome to Story Teller 📖✨"
+);
+
+
+
+
+
+/* ===============================
+        OPEN PROFILE
+================================== */
+
+
+window.location.href =
+"profile.html";
+
+
+};
+
+
+</script>
+
+
+
+</body>
+
+</html>
